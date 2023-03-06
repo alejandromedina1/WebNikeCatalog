@@ -14,8 +14,12 @@ h1{
     line-height: 85%;
 }
 
+p{
+    margin-bottom: 5px;
+}
+
 body{
-    background-color: #1E1E1E;
+    background-color: #CE011E;
 }
 
 #principal-menu{
@@ -27,30 +31,22 @@ body{
 }
 
 .navbar-nav {
-    --bs-nav-link-padding-x: 0;
-    --bs-nav-link-padding-y: 0.5rem;
     --bs-nav-link-font-weight: ;
-    --bs-nav-link-color: lightgray;
+    --bs-nav-link-color: rgb(219, 219, 219);
     --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
 }
 
 .navbar {
-    --bs-navbar-padding-x: 0;
-    --bs-navbar-padding-y: 0.5rem;
     --bs-navbar-color: white;
     --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
     --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
     --bs-navbar-active-color: white;
-    --bs-navbar-brand-padding-y: 0.3125rem;
-    --bs-navbar-brand-margin-end: 1rem;
-    --bs-navbar-brand-font-size: 1.25rem;
-    --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
-    --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
-    --bs-navbar-nav-link-padding-x: 0.5rem;
 }
 
 #search{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -72,17 +68,22 @@ body{
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.material-symbols-outlined {
+    color: white;
+    font-size: 30px;
+}
+
 #banner{
     display: flex;
-    margin-top: -100px;
-    background-color: #CE011E;
+    background: url(./Images/red-shoe.jpg) no-repeat right;
+    background-size: 80%;
     height: 1000px;
 }
 
 #banner-info{
     color: white;
     height: 100%;
-    width: 100%;
+    width: 650px;
     gap: 20px;
     margin-left: 50px;
     display: flex;
@@ -91,6 +92,7 @@ body{
     align-items: start;
     word-wrap:break-word;
 }
+
 
 .btn{
     --bs-btn-padding-x: 2.5rem;
@@ -105,10 +107,53 @@ body{
     --bs-btn-hover-color: #CE011E;
 }
 
+
 #red-shoe{
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: end;
     margin-right: 50px;
+}
+
+#best-sellers{
+    background: url(./Images/section-2-bg.png)  no-repeat center;
+    background-size: cover;
+    height: 1400px;
+    display: flex;
+    align-items: center;
+}
+
+#cards-bs{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+}
+
+.card{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --bs-card-border-radius: 18px;
+    --bs-card-inner-border-radius: 18px;
+    background: rgba(57, 57, 57, 0.27);
+    border-radius: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.7px);
+    -webkit-backdrop-filter: blur(5.7px);
+    border: 1px solid rgba(57, 57, 57, 0.11);
+    color: white;
+}
+
+.card-body{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
 }
