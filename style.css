@@ -161,6 +161,24 @@ body{
 
 /* Estilos Alejo */
 
+#carousel-highlight{
+    display: flex;
+    justify-content: center;
+}
+
+#carousel-highlight-container{
+    display: flex;
+    align-items: center;
+}
+
+#carousel-highlight-text{
+    display: flex;
+    align-items: center;
+    margin: 2%;
+}
+#carousel-highlight-content{
+    gap: 20px;
+}
 
 #featured-section{
     display: flex;
