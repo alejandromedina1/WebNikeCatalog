@@ -23,23 +23,14 @@ body{
     background-color: #CE011E;
 }
 
+
 #principal-menu{
-    background-color: transparent !important;
-    margin: 50px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 20px;
     justify-content: space-around;
 }
 
-.navbar-nav {
-    --bs-nav-link-font-weight: ;
-    --bs-nav-link-color: rgb(219, 219, 219);
-    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
-}
-
 .navbar {
-    --bs-navbar-color: white;
-    --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+    --bs-navbar-hover-color: white;
     --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
     --bs-navbar-active-color: white;
 }
@@ -68,11 +59,11 @@ body{
     border-radius: 5rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
 .material-symbols-outlined {
     color: white;
     font-size: 30px;
 }
+
 
 #banner{
     display: flex;
@@ -94,6 +85,9 @@ body{
     word-wrap:break-word;
 }
 
+#description-nfree{
+    font-style: italic;
+}
 
 .btn{
     --bs-btn-padding-x: 2.5rem;
@@ -107,7 +101,6 @@ body{
     --bs-btn-hover-bg: white;
     --bs-btn-hover-color: #CE011E;
 }
-
 
 #red-shoe{
     height: 100%;
@@ -131,6 +124,7 @@ body{
     align-items: center;
     justify-content: center;
     margin: 50px;
+    flex-wrap: wrap;
 }
 
 .card{
@@ -149,6 +143,12 @@ body{
     color: white;
 }
 
+.card:hover{
+    scale: 105%;
+    background-color: #CE011E;
+    cursor: pointer;
+}
+
 .card-body{
     padding-left: 20px;
     padding-right: 20px;
@@ -157,6 +157,30 @@ body{
     flex-direction: column;
     align-items: start;
     justify-content: left;
+}
+
+.ref{
+    font-style: italic;
+}
+
+.price{
+    font-weight: 700;
+}
+
+#womens-alate{
+    padding: 50px;
+    background-color: #1E1E1E;
+    height: 570px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#info-wa{
+    gap: 106px;
+
 }
 
 /* Estilos Alejo */
