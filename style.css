@@ -179,29 +179,108 @@ body{
 }
 
 #info-wa{
-    gap: 106px;
+    font-size: 35px;
 
 }
 
 /* Estilos Alejo */
 
-#carousel-highlight{
+#kids-section{
     display: flex;
+    flex-direction: row;
+    background-color: black;
+    padding: 200px 0px
+}
+.kids-image{
+    width: 100%;
+}
+.kids-image:hover{
+    width: 100%;
+    scale: 110%;
+}
+#kids-section-highlighted{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    flex-direction: column;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    align-items: center;
+}
+
+#image-overlay{
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+#kids-section-button{
+    background-color: transparent;
+    color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 100px;
+    border-color: white;
+    border-style: solid;
+}
+#kids-section-button:hover{
+    background-color: white;
+    color: #CE011E;
+}
+
+
+
+#dark-section{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+    background-color: black;
+    color: white;
+}
+#dark-section-container-image{
+    min-width: 50%;
+    margin-bottom: 0px;
+}
+#dark-section-image{
+    width: 100%;
+    margin-bottom: 0px;
+}
+#dark-section-container-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 5%;
+    margin: 60px;
+}
+h3{
+    font-size: 80px;
+    text-align: center;
+}
+#dark-section-info{
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
 }
 
-#carousel-highlight-container{
-    display: flex;
-    align-items: center;
+#dark-section-button{
+    background-color: black;
+    color: white;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 100px;
+    border-color: white;
+    border-style: solid;
+    
 }
 
-#carousel-highlight-text{
-    display: flex;
-    align-items: center;
-    margin: 2%;
-}
-#carousel-highlight-content{
-    gap: 20px;
+#dark-section-button:hover{
+    background-color: white;
+    color: #CE011E;
 }
 
 #featured-section{
@@ -266,9 +345,13 @@ ul {
 }
 .nav-featured{
     color: #C3C3C3;
+    transition: 0.5ms;
 }
 .nav-featured:hover{
     color: #F13030;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 0.5ms;
 }
 
 #nav-featured-selected{
@@ -277,9 +360,25 @@ ul {
 }
 .img-featured{
     width: 300px;
+    scale: 100%;
+    opacity: 1;
 }
+.img-featured:hover{
+    width: 300px;
+    scale: 110%;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
 .img-featured-big{
     height: 774px;
+    opacity: 1;
+}
+
+.img-featured-big:hover{
+    height: 774px;
+    scale: 105%;
+    opacity: 0.6;
 }
 footer{
     display: flex;
