@@ -1,4 +1,4 @@
-/* ________________________________________________ 
-1) Importar los archivos js de cada componente
-2) Lógica de la página web
-________________________________________________*/
+window.addEventListener("scroll", function () {
+    var header = this.document.querySelector("header");
+    header.classList.toggle("abajo", this.window.scrollY>0);
+})

@@ -23,47 +23,96 @@ body{
     background-color: #CE011E;
 }
 
+li{
+    list-style: none;
+}
+
+header{
+    padding: 15px 50px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+}
+
+#logo-img{
+    position: relative;
+    transition: 1.5s;
+}
 
 #principal-menu{
     padding: 20px;
-    justify-content: space-around;
-}
-
-.navbar {
-    --bs-navbar-hover-color: white;
-    --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
-    --bs-navbar-active-color: white;
-}
-
-#search{
     display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    position: relative;
+    transition: 0.7s;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 
-.form-control {
+#list-menu ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.list-item{
+    position: relative;
+    color: white;
+    margin: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.7s;
+}
+
+.list-item:hover{
+    color: #CE011E;
+    text-decoration: underline;
+}
+
+.nav-link{
+    color: rgb(222, 222, 222);
+}
+
+.active{
+    color: white;
+}
+
+#search-input{
     display: block;
     width: 200px;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5;
-    color: var(--bs-body-color);
-    background-color: var(--bs-form-control-bg);
-    background-clip: padding-box;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 5rem;
+    border-color: transparent;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+#search-nav{
+    gap: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .material-symbols-outlined {
     color: white;
     font-size: 30px;
 }
 
+.abajo{
+    background-color: #1E1E1E;
+}
 
 #banner{
     display: flex;
