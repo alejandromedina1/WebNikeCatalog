@@ -16,10 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
 
 <body>
-  
+
   <header id="desktop-menu">
     <nav id="principal-menu">
       <a href="#" id="logo-img"><img src="./Images/nike logo blanco.png" height="30px" alt=""></a>
@@ -48,12 +49,12 @@
       <div id="search-nav">
         <input type="search" name="search" id="search-input">
         <a><span class="material-symbols-outlined">
-          favorite
-        </span>
+            favorite
+          </span>
         </a>
         <a><span class="material-symbols-outlined">
-          shopping_cart
-        </span>
+            shopping_cart
+          </span>
         </a>
       </div>
     </nav>
@@ -64,47 +65,47 @@
       <a href="#" id="logo-img"><img src="./Images/nike logo blanco.png" height="30px" alt=""></a>
       <div id="search-nav">
         <a><span class="material-symbols-outlined">
-          search
-        </span>
+            search
+          </span>
         </a>
         <a><span class="material-symbols-outlined">
-          favorite
-        </span>
+            favorite
+          </span>
         </a>
         <a><span class="material-symbols-outlined">
-          shopping_cart
-        </span>
+            shopping_cart
+          </span>
         </a>
       </div>
       <div id="list-menu" class="dropdown">
         <a><span class="material-symbols-outlined" id="dropdown-btn">
-          menu
-        </span>
+            menu
+          </span>
         </a>
         <div class="dropdown-content">
-        <ul>
-          <li>
-            <a href="#" class="nav-link active list-item">New & Featured</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link list-item">Men</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link list-item">Women</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link list-item">Kids</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link list-item">Accessories</a>
-          </li>
-          <li>
-            <a href="#" class="nav-link list-item">Sale</a>
-          </li>
-        </ul>
+          <ul>
+            <li>
+              <a href="#" class="nav-link active list-item">New & Featured</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link list-item">Men</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link list-item">Women</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link list-item">Kids</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link list-item">Accessories</a>
+            </li>
+            <li>
+              <a href="#" class="nav-link list-item">Sale</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      </div>
-      
+
     </nav>
   </header>
 
@@ -112,6 +113,7 @@
   <main>
 
     <section id="banner">
+      <div id="red-shoe"><img src="./Images/red-shoe.jpg" height="100%" alt=""></div>
       <div id="banner-info">
         <h1>Nike Free RN</h1>
         <p id="description-nfree">The Nike Free Rn 2017 Womens Running Shoe Weighs Less Than Previous Versions And
@@ -167,8 +169,64 @@
       </div>
     </section>
 
+    <section id="best-sellers-mobile">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card" style="width: 300px;">
+              <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/2761d8f4-3210-451e-b4b9-128a713b2f3e/air-max-90-futura-womens-shoes-kvRZ4h.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Nike Air Max 90 Futura</h4>
+                <p class="card-text ref">Women's Shoes</p>
+                <p class="card-text price">$160</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card" style="width: 300px;">
+              <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/96789d32-38d4-4bb1-bd5e-8a358f32e969/air-force-1-07-mid-womens-shoes-2NP34w.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Nike Air Force 1 '07 Mid</h4>
+                <p class="card-text ref">Women's Shoes</p>
+                <p class="card-text price">$130</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card" style="width: 300px;">
+              <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/8fcb8ed5-8091-4fb6-a133-e95af6eda4c7/air-jordan-5-x-dj-khaled-mens-shoes-F3jrrH.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Air Jordan 5 x DJ Khaled</h4>
+                <p class="card-text ref">Men's Shoes</p>
+                <p class="card-text price">$225</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card" style="width: 300px;">
+              <img
+                src="https://static.nike.com/a/images/t_PDP_1728_v1/ff15c794-e8bf-41d5-a2c1-b44aa9ef7990/air-max-90-se-mens-shoes-fSGj72.png"
+                class="card-img-top" alt="...">
+              <div class="card-body">
+                <h4 class="card-title">Nike Air Max 90 SE</h4>
+                <p class="card-text">Men's Shoes</p>
+                <p class="card-text">$140</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="womens-alate">
-      <img id="woman-img" src="https://static.nike.com/a/images/w_960,c_limit/8814e874-818c-4a60-adbc-5880738b06e7/image.jpg" alt="">
+      <img id="woman-img"
+        src="https://static.nike.com/a/images/w_960,c_limit/8814e874-818c-4a60-adbc-5880738b06e7/image.jpg" alt="">
       <div id="alate-info">
         <h1>Womens Nike Alate</h1>
         <h3 id="info-wa">Just in: Our dreamiest sports bras yet.</h3>
@@ -341,6 +399,7 @@
   </footer>
 
   <script type="module" src="src/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 </body>
 

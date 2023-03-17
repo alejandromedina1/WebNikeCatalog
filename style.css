@@ -120,15 +120,14 @@ li {
 
 #banner {
     display: flex;
-    background: url(./Images/red-shoe.jpg) no-repeat right;
-    background-size: 80%;
+    flex-direction: row-reverse;
     height: 1000px;
 }
 
 #banner-info {
     color: white;
     height: 100%;
-    width: 650px;
+    width: 40%;
     gap: 20px;
     margin-left: 50px;
     display: flex;
@@ -156,11 +155,12 @@ li {
 }
 
 #red-shoe {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-right: 50px;
+    width: 60%;
+}
+
+#red-shoe img {
+    width: 100%;
+    object-fit: contain;
 }
 
 #best-sellers {
@@ -169,6 +169,10 @@ li {
     height: 1400px;
     display: flex;
     align-items: center;
+}
+
+#best-sellers-mobile {
+    display: none;
 }
 
 #cards-bs {
@@ -518,6 +522,11 @@ hr {
 
     #mobile-menu {
         display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
     }
 
     .dropdown-content {
@@ -540,6 +549,7 @@ hr {
 
     h1 {
         font-size: 45pt;
+        text-align: start;
     }
 
     #info-wa {
@@ -547,14 +557,72 @@ hr {
     }
 
     #banner {
-        height: 600px;
+        height: 100%;
         display: flex;
+        flex-direction: column;
         text-align: center;
+        align-items: center;
+        background: #CE011E;
+    }
+
+    #banner-info {
+        height: 40%;
+        width: 100%;
+        margin-left: 0;
+        padding: 16px;
         align-items: center;
     }
 
+    #red-shoe {
+        margin-top: 50px;
+        height: 60%;
+        width: 100%;
+    }
+
+    #red-shoe img {
+        object-fit: fill;
+    }
+
+    .btn {
+        text-align: center;
+    }
+
     #best-sellers {
+        display: none;
+    }
+
+    #best-sellers-mobile {
+        padding: 70px 40px;
+        display: flex;
+        background: url(./Images/section-2-bg.png) no-repeat center;
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .swiper {
+        width: 100%;
         height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card {
+        width: 100%;
+        margin-left: 15px;
     }
 
     #womens-alate {
@@ -577,10 +645,6 @@ hr {
     #cards-bs {
         margin: 0;
         padding: 16px;
-    }
-
-    .card{
-        width: 90%;
     }
 
 }
