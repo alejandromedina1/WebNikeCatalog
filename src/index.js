@@ -8,4 +8,4 @@ window.addEventListener("scroll", function () {
     header.classList.toggle("abajo", this.window.scrollY>0);
 })
 
-var swiper = new Swiper(".mySwiper", {});
+//var swiper = new Swiper(".mySwiper", {});
