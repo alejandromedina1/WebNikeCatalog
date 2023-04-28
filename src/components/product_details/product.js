@@ -24,6 +24,9 @@ class Product extends HTMLElement {
                 <img src="${this.url}">
             </figure>
             <div id = 'text-details-container'>
+                <a href = "../../../catalog.html"> 
+                    <p>  < Back </p>
+                </a>
                 <div id = labels> 
                     <h4>${this.collection}</h4>
                     <h4> ${this.category}</h4>
