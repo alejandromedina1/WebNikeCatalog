@@ -22,12 +22,13 @@ class Card extends HTMLElement {
         <link rel = "stylesheet" href = "/src/components/card/style.css">
         <article class="product">
             <span class="product_price">$${this.price}</span>
+        <div id="info_card">
             <img class="product_image" src="${this.product_image}">
             <h1 class="product_title">${this.name}</h1>
             <hr />
-            <h3>${this.category}</h3>
-            
+            <h3 class="category_style">${this.category}</h3>
             <a href="#" class="product_btn btn">SEE MORE</a>
+        </div>
         </article>
         `
     }
