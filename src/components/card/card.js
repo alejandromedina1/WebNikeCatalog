@@ -17,6 +17,12 @@ class Card extends HTMLElement {
         return ['name', 'product_image', 'description', 'category', 'collection', 'colors', 'price']
     }
 
+    formatName(name = '') {
+        const noCharacters = name.replace(/[^\w\s]/gi, '')
+        const noSpaces = noCharacters.replace(/ /g, '-')
+        return noSpaces.toLowerCase()
+    }
+
     render() {
         this.shadowRoot.innerHTML = `
         <link rel = "stylesheet" href = "/src/components/card/style.css">
@@ -27,7 +33,7 @@ class Card extends HTMLElement {
             <h1 class="product_title">${this.name}</h1>
             <hr />
             <h3 class="category_style">${this.category}</h3>
-            <a href="#" class="product_btn btn">SEE MORE</a>
+            <a href="/details/?name=${this.formatName(this.name)}" class="product_btn btn">SEE MORE</a>
         </div>
         </article>
         `
