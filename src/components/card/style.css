@@ -335,6 +335,7 @@ hr {
         left: 0;
         width: 100%;
         z-index: 10;
+        background-color: #1E1E1E;
     }
 
     .dropdown-content {
@@ -354,5 +355,123 @@ hr {
         display: block;
         text-align: left;
     }
+
+    .product {
+        position: relative;
+        height: 370px;
+        width: 180px;
+        padding: 16px;
+        border-radius: 8px;
+        background-color: white;
+        transition: box-shadow;
+        box-shadow: 0 10px 25px -20px #1e1e1e;
+    }
+
+    .product_title {
+        font-size: large;
+        color: #1e1e1e;
+        line-height: 1.1;
+    }
+
+    #cards_container{
+        margin: 300px 0;
+        padding: 4rem 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px 8px;
+    }
+    
+    #info_card{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .product_price {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -20px;
+        margin-left: -20px;
+        width: 70px;
+        height: 70px;
+        background-color: #1e1e1e;
+        color: white;
+        border-radius: 50%;
+        font-size: medium;
+        font-weight: 700;
+    }
+    
+    .product_title {
+        font-size: large;
+        color: #1e1e1e;
+        line-height: 1.1;
+    }
+
+    .category_style{
+        font-size: small;
+        padding: 10px 0;
+    }
+    
+    .btn {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 0.5em 1rem;
+        white-space: nowrap;
+        border-radius: 18px;
+        font-size: medium;
+        font-weight: 500;
+    }    
+
+    h5 {
+        
+        font-size: 12px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    #description-featured-section{
+        font-size: 12px;
+    }
+    footer {
+        flex-wrap: wrap;
+    }
+    #footer-section-resources {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    li {
+        font-size: 14px;
+    }
+    footer section .resources li:not(.options) {
+        color: #A3A3A3;
+        font-size: 14px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
+    footer section .resources li:not(.options):hover {
+        color: white;
+        font-size: 14px;
+        transition: 0.5s;
+    }
+    #footer-logo{
+        width: 20%px;
+        display: flex;
+        justify-content: center;
+        padding-left: 20%;
+    }
+    p{
+        font-size: 12px;
+    }
+
 
 }

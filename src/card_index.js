@@ -27,7 +27,6 @@ const shoesList = await getData();
 const cardsContainer = document.getElementById('cards_container');
 const categoryButtons = document.querySelectorAll('#categories a');
 
-console.log(categoryButtons)
 categoryButtons.forEach(btn => btn.addEventListener('click', ()=> setCategory(btn)))
 
 console.log(Array.isArray(shoesList))
