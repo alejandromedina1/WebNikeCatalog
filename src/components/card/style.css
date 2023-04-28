@@ -20,7 +20,7 @@ p {
 }
 
 body {
-    background-color: #CE011E;
+    background-color: #F6F6F6;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -45,14 +45,11 @@ ul{
 
 #desktop-menu {
     padding: 15px 50px;
-    /*position: fixed;
-    z-index: 10;
-    
-    */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: #1E1E1E;
 }
 
 #mobile-menu {
@@ -104,7 +101,7 @@ ul{
 }
 
 .active {
-    color: white;
+    color: #CE011E;
 }
 
 #search-input {
@@ -148,13 +145,11 @@ ul{
     width: 100%;
     position: fixed;
     z-index: 10;
+    top: 0;
+    left: 0;
+    margin-top: 100px;
 }
 
-#categories ul{
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-}
 
 
 /*shoes cards*/
