@@ -1,13 +1,13 @@
 import "/src/components/card/card.js"
 
 window.addEventListener("scroll", function () {
-    var header = this.document.getElementById("desktop-menu");
-    header.classList.toggle("abajo", this.window.scrollY>0);
-})
-
-window.addEventListener("scroll", function () {
-    var header = this.document.getElementById("mobile-menu");
-    header.classList.toggle("abajo", this.window.scrollY>0);
+    var header = this.document.getElementById("categories");
+    let scrollTop = this.document.documentElement.scrollTop;
+    if (header.offsetTop < scrollTop) {
+        header.style.marginTop = '0';
+    } else {
+        header.style.marginTop = '100px';
+    }
 })
 
 async function getData(){
@@ -25,15 +25,26 @@ async function getData(){
 
 const shoesList = await getData();
 const cardsContainer = document.getElementById('cards_container');
-const categoryButtons = document.querySelectorAll('#categories button');
+const categoryButtons = document.querySelectorAll('#categories a');
 
 console.log(categoryButtons)
 categoryButtons.forEach(btn => btn.addEventListener('click', ()=> setCategory(btn)))
 
 console.log(Array.isArray(shoesList))
+renderShoes(false);
+function renderShoes(category){
 
-function renderShoes(){
-    shoesList.forEach(shoe =>{
+    let filteredShoes= [];
+    cardsContainer.innerHTML=''
+
+    if (!category || category === 'All') {
+        filteredShoes = shoesList;
+    }else {
+        filteredShoes = shoesList.filter(shoe => shoe.category === category)
+    }
+    console.log(filteredShoes)
+
+    filteredShoes.forEach(shoe =>{
         const nikeShoe = document.createElement('nike-card')
         nikeShoe.setAttribute('name', shoe.name)
         nikeShoe.setAttribute('price', shoe.price)
@@ -47,8 +58,8 @@ function renderShoes(){
     });
 }
 
-renderShoes();
-
 function setCategory(event){
-    console.log(event)
+    const category = event.textContent
+    console.log(event.textContent)
+    renderShoes(category);
 }
