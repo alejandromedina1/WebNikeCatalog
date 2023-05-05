@@ -38,7 +38,7 @@ li {
     list-style: none;
 }
 
-ul{
+ul {
     padding: 0;
     margin: 0;
 }
@@ -132,38 +132,75 @@ ul{
     background-color: #1E1E1E;
 }
 
-/*filtros*/
-#categories{
-    background-color: #F6F6F6;;
-    color: #1E1E1E;
+#catalog {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    font-size: 1rem;
-    font-weight: 700;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    margin-top: 100px;
+    flex-direction: row;
 }
 
-.filter{
+/*filtros*/
+#categories {
+    background-color: #F6F6F6;
     color: #1E1E1E;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    padding: 30px 30px 200px 70px;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    top: 1%;
+    left: 0;
+    margin-top: 120px;
+    gap: 40px;
+    transition: box-shadow;
+    box-shadow: 0 10px 25px -20px #1e1e1e;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: left;
+    color: #1E1E1E;
+}
+
+.filter h4 {
+    color: #CE011E;
+    font-weight: 700;
+}
+
+#color-button-container{
+    display: flex;
+    font-size: 1pt;
+    flex-wrap: wrap;
+}
+
+#color-button-container button{
+    color:  transparent !important;
+
 }
 
 /*shoes cards*/
-#cards_container{
+#cards_container {
     padding: 8rem 3rem;
     height: 100%;
-    width: 100%;
+    width: 80%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 0;
+    left: 20%;
     gap: 50px;
+}
+
+nike-card{
+    width: 30%;
 }
 
 .product_image {
@@ -187,15 +224,16 @@ hr {
 .product {
     position: relative;
     height: 900px;
-    width: 400px;
+   
     padding: 40px;
+    
     border-radius: 8px;
     background-color: white;
     transition: box-shadow;
     box-shadow: 0 10px 25px -20px #1e1e1e;
 }
 
-#info_card{
+#info_card {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -244,10 +282,10 @@ hr {
 }
 
 .product_btn:hover {
-  background-color: #1e1e1e;
+    background-color: #1e1e1e;
 }
 
-.category_style{
+.category_style {
     padding: 10px 0;
 }
 
@@ -259,6 +297,7 @@ footer {
     flex-direction: column;
     background-color: black;
     color: white;
+    z-index: 10;
 }
 
 #footer-section-resources {
@@ -292,7 +331,7 @@ footer section .resources li:not(.options):hover {
     transition: 0.5s;
 }
 
-#footer-logo{
+#footer-logo {
     width: 100px;
 }
 
@@ -334,8 +373,24 @@ hr {
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 10;
         background-color: #1E1E1E;
+    }
+
+    #list-menu ul {
+        position: relative;
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        color: white;
+    }
+    
+    .list-menu {
+        position: relative;
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.7s;
     }
 
     .dropdown-content {
@@ -356,6 +411,74 @@ hr {
         text-align: left;
     }
 
+    .topnav ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .static{
+        display: flex;
+        justify-content: space-around;
+        position: relative;
+    }
+
+    .static >h4:hover{
+        color: #1E1E1E;
+    }
+/*
+    .static h4:hover .show{
+        display: block;
+    }
+
+    .show{
+        position: relative;
+        display: none;
+        width:  100%;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: left;
+    }
+    .show:hover{
+        background-color: white;
+    }
+    */
+
+
+    #categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: 700;
+        width: 100%;
+        height: 300px;
+        position: fixed;
+        top: 80px;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        z-index: 10;
+        gap: 40px;
+        transition: box-shadow;
+        box-shadow: 0 10px 25px -20px #1e1e1e;
+    }
+    
+    .filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        color: #1E1E1E;
+    }
+    
+    .filter h4 {
+        color: #CE011E;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
     .product {
         position: relative;
         height: 370px;
@@ -373,26 +496,27 @@ hr {
         line-height: 1.1;
     }
 
-    #cards_container{
-        margin: 300px 0;
-        padding: 4rem 0;
+    #cards_container {
+        margin: 100px 0;
+        padding: 4.2rem 0;
         height: 100%;
-        width: 100%;
+        width: 80%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         flex-wrap: wrap;
-        gap: 20px 8px;
+        left: 0;
+        row-gap: 20px;
     }
-    
-    #info_card{
+
+    #info_card {
         height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
     }
-    
+
     .product_price {
         position: absolute;
         display: flex;
@@ -408,18 +532,18 @@ hr {
         font-size: medium;
         font-weight: 700;
     }
-    
+
     .product_title {
         font-size: large;
         color: #1e1e1e;
         line-height: 1.1;
     }
 
-    .category_style{
+    .category_style {
         font-size: small;
         padding: 10px 0;
     }
-    
+
     .btn {
         display: inline-block;
         color: white;
@@ -429,47 +553,55 @@ hr {
         border-radius: 18px;
         font-size: medium;
         font-weight: 500;
-    }    
+    }
 
     h5 {
-        
+
         font-size: 12px;
     }
-    h3{
+
+    h3 {
         font-size: 20px;
     }
-    #description-featured-section{
+
+    #description-featured-section {
         font-size: 12px;
     }
+
     footer {
         flex-wrap: wrap;
     }
+
     #footer-section-resources {
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     li {
         font-size: 14px;
     }
+
     footer section .resources li:not(.options) {
         color: #A3A3A3;
         font-size: 14px;
         transition: 0.5s;
         cursor: pointer;
     }
-    
+
     footer section .resources li:not(.options):hover {
         color: white;
         font-size: 14px;
         transition: 0.5s;
     }
-    #footer-logo{
+
+    #footer-logo {
         width: 20%px;
         display: flex;
         justify-content: center;
         padding-left: 20%;
     }
-    p{
+
+    p {
         font-size: 12px;
     }
 

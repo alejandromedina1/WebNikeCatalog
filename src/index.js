@@ -9,3 +9,16 @@ window.addEventListener("scroll", function () {
 })
 
 //var swiper = new Swiper(".mySwiper", {});
+let menuToggle = document.getElementById("dropdown-btn");
+menuToggle.addEventListener('click', function (){
+    dropdown()
+})
+
+function dropdown() {
+    let nav = document.getElementById("my_topnav");
+    if (nav.className === "topnav") {
+      nav.className += " dropdown-content";
+    } else {
+      nav.className = "topnav";
+    }
+}
