@@ -45,7 +45,6 @@ function renderDetails() {
     updateItem(product, 'colors', currentShoe.color)
     updateItem(product, 'url', currentShoe.urlImage)
     detailContainer.append(product)
-    console.log(currentShoe.color[0].toLowerCase())
 
     const colorContainer = product.shadowRoot.getElementById('product-colors')
     for (let index = 0; index < currentShoe.color.length; index++) {
@@ -58,12 +57,64 @@ function renderDetails() {
         buttonElement.style.border = "1px solid #A3A3A3";
         buttonElement.style.borderRadius = "100px";
 
-        console.log(buttonElement)
-
         colorContainer.append(buttonElement)
 
     }
+    sizeButtons()
+    starRating()
 }
+
+function sizeButtons () {
+    const product = document.querySelector('nike-product')
+    console.log(product.shadowRoot)
+    
+    const tallaBtns = product.shadowRoot.querySelectorAll('.talla-btn');
+    tallaBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+          console.log('hola')
+
+        tallaBtns.forEach(btn => {
+          btn.classList.remove('selected');
+        });
+
+        btn.classList.add('selected');
+      });
+    });
+}
+
+function starRating() {
+    const product = document.querySelector('nike-product')
+    const stars = product.shadowRoot.querySelectorAll('.stars');
+      stars.forEach(function(star, index) {
+        star.addEventListener('mouseover', function() {
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add('selected');
+          }
+        });
+
+        star.addEventListener('mouseout', function() {
+          stars.forEach(function(star) {
+            star.classList.remove('selected');
+          });
+        });
+
+        star.addEventListener('click', function() {
+          stars.forEach(function(star, i) {
+            if (i <= index) {
+              star.classList.add('selected');
+            } else {
+              star.classList.remove('selected');
+            }
+          });
+
+          const mensaje = product.shadowRoot.querySelector('#mensaje');
+          mensaje.textContent = '¡Thank you!';
+        });
+      });
+
+}
+
+
 
 function updateItem(item, key, value) {
     item[key] = value
@@ -72,10 +123,10 @@ function updateItem(item, key, value) {
 
 window.addEventListener("scroll", function () {
     var header = this.document.getElementById("desktop-menu");
-    header.classList.toggle("abajo", this.window.scrollY>0);
+    header.classList.toggle("abajo", this.window.scrollY > 0);
 })
 
 window.addEventListener("scroll", function () {
     var header = this.document.getElementById("mobile-menu");
-    header.classList.toggle("abajo", this.window.scrollY>0);
+    header.classList.toggle("abajo", this.window.scrollY > 0);
 })

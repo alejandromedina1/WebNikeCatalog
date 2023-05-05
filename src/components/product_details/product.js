@@ -34,22 +34,27 @@ class Product extends HTMLElement {
                 <h1 id ="title"> ${this.name} </h1>
                 <h3> ${this.price}$</h3>
                 <p class = "paragraph-text"> ${this.description} </p>
-                <h2> Select color</h2>
+                <h2> Item Colors </h2>
                 <div id="product-colors"></div>
                 <hr>
                 <h2> Size</h2>
-                <select id="size-input" name="size">
-                    <option value="Select">Select</option>    
-                    <option value="35">35</option>
-                    <option value="36">36</option>
-                    <option value="37">37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                </select>
+                <div id="size-btns">
+                    <button class="talla-btn" id="talla-1">37</button>
+                    <button class="talla-btn" id="talla-2">38</button>
+                    <button class="talla-btn" id="talla-3">39</button>
+                    <button class="talla-btn" id="talla-4">40</button>
+                    <button class="talla-btn" id="talla-5">41</button>    
+                </div>
+                <hr>
+                <h2> Rate this product</h2>
+                <div>
+                    <span class="stars" id="star1">&#9733;</span>
+                    <span class="stars" id="star2">&#9733;</span>
+                    <span class="stars" id="star3">&#9733;</span>
+                    <span class="stars" id="star4">&#9733;</span>
+                    <span class="stars" id="star5">&#9733;</span>
+                    <span class="mensaje" id="mensaje"></span>
+                </div>
                 <hr>
                 <button id = 'add-to-cart' > Add to Cart </button>
         </article>
