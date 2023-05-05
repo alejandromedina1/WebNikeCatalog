@@ -11,56 +11,57 @@
         flex-direction: row;
         margin-bottom: 40px;
     }
-    
+
     img {
         width: 750px;
     }
-    
+
     h1 {
         font-size: 50pt;
         font-weight: 800;
         line-height: 85%;
         color: #292929;
     }
-    
-    
+
+
     p {
         margin-bottom: 5px;
         line-height: 18pt;
         color: #292929;
     }
-    
+
     h2 {
         font-weight: bold;
         color: #292929;
     }
-    
+
     h3 {
         font-size: 30pt;
         font-weight: 400;
         color: #292929;
     }
+
     h4 {
         font-weight: 200;
         color: #292929;
     }
-    
+
     h5 {
         color: #F13030;
         font-style: normal;
         font-size: 16px;
     }
-    
+
     ul {
         list-style-type: none;
     }
-    
+
     hr {
         width: 100%;
         color: #F13030;
     }
-    
-    #text-details-container{
+
+    #text-details-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,36 +69,37 @@
         margin-right: 5%;
         gap: 32px;
     }
-    
+
     #labels {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     button {
         border: 0px;
         border-radius: 100px;
         padding: 16px;
     }
-    button:hover{
+
+    button:hover {
         border: 1px, solid #292929;
     }
-    
-    #product-colors{
+
+    #product-colors {
         display: flex;
         gap: 12px;
     }
-    
-    #size-input{
+
+    #size-input {
         width: 20%;
         border-radius: 8px;
         height: 40px;
         border: 1px solid #b9b9b9;
         padding-left: 12px;
     }
-    
-    #add-to-cart{
+
+    #add-to-cart {
         width: 100%;
         height: 60px;
         border-radius: 8px;
@@ -106,7 +108,7 @@
         font-family: 'Inter', sans-serif;
         font-size: 16px;
         color: white;
-    
+
     }
 }
 
@@ -122,61 +124,62 @@
         margin-bottom: 40px;
     }
 
-    figure{
+    figure {
         display: flex;
         justify-content: center;
     }
-    
+
     img {
         width: 100%;
     }
-    
+
     h1 {
         font-size: 50pt;
         font-weight: 800;
         line-height: 85%;
         color: #292929;
     }
-    
-    
+
+
     p {
         margin-bottom: 5px;
         line-height: 25pt;
         color: #292929;
         font-size: 20px;
     }
-    
+
     h2 {
         font-weight: bold;
         color: #292929;
     }
-    
+
     h3 {
         font-size: 30pt;
         font-weight: 400;
         color: #292929;
     }
+
     h4 {
         font-weight: 200;
         color: #292929;
     }
-    
+
     h5 {
         color: #F13030;
         font-style: normal;
         font-size: 16px;
     }
-    
+
     ul {
         list-style-type: none;
     }
-    
+
     hr {
         width: 100%;
         color: #F13030;
     }
-    
-    #text-details-container{
+
+    #text-details-container {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
@@ -184,25 +187,25 @@
         gap: 32px;
         width: 100%;
     }
-    
+
     #labels {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .color-buttons {
         border: 0px;
         border-radius: 100px;
         padding: 16px;
     }
-    
-    #product-colors{
+
+    #product-colors {
         display: flex;
         gap: 12px;
     }
-    
-    #size-input{
+
+    #size-input {
         width: 50%;
         border-radius: 8px;
         height: 80px;
@@ -210,8 +213,8 @@
         padding-left: 12px;
         font-size: 24px;
     }
-    
-    #add-to-cart{
+
+    #add-to-cart {
         width: 100%;
         height: 90px;
         border-radius: 8px;
@@ -220,7 +223,7 @@
         font-family: 'Inter', sans-serif;
         font-size: 30px;
         color: white;
-    
+
     }
 }
 
@@ -236,61 +239,62 @@
         margin-bottom: 40px;
     }
 
-    figure{
+    figure {
         display: flex;
         justify-content: center;
     }
-    
+
     img {
         width: 100%;
     }
-    
+
     h1 {
         font-size: 30pt;
         font-weight: 800;
         line-height: 85%;
         color: #292929;
     }
-    
-    
+
+
     p {
         margin-bottom: 5px;
         line-height: 25pt;
         color: #292929;
         font-size: 20px;
     }
-    
+
     h2 {
         font-weight: bold;
         color: #292929;
     }
-    
+
     h3 {
         font-size: 22pt;
         font-weight: 400;
         color: #292929;
     }
+
     h4 {
         font-weight: 200;
         color: #292929;
     }
-    
+
     h5 {
         color: #F13030;
         font-style: normal;
         font-size: 16px;
     }
-    
+
     ul {
         list-style-type: none;
     }
-    
+
     hr {
         width: 100%;
         color: #F13030;
     }
-    
-    #text-details-container{
+
+    #text-details-container {
         margin-top: 50px;
         display: flex;
         flex-direction: column;
@@ -298,25 +302,25 @@
         gap: 32px;
         width: 100%;
     }
-    
+
     #labels {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .color-buttons {
         border: 0px;
         border-radius: 100px;
         padding: 16px;
     }
-    
-    #product-colors{
+
+    #product-colors {
         display: flex;
         gap: 12px;
     }
-    
-    #size-input{
+
+    #size-input {
         width: 50%;
         border-radius: 8px;
         height: 80px;
@@ -324,8 +328,8 @@
         padding-left: 12px;
         font-size: 24px;
     }
-    
-    #add-to-cart{
+
+    #add-to-cart {
         width: 100%;
         height: 80px;
         border-radius: 8px;
@@ -334,6 +338,56 @@
         font-family: 'Inter', sans-serif;
         font-size: 22px;
         color: white;
-    
+
     }
+
+}
+
+#add-to-cart:hover {
+    background-color: #292929;
+    cursor: pointer;
+}
+
+.talla-btn {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.talla-btn.selected {
+    background-color: #292929;
+    color: white;
+    border-color: white;
+}
+
+#size-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.stars {
+    font-size: 24px;
+    color: #ccc;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.stars.selected {
+    color: #FFD700;
+}
+
+.mensaje {
+    font-size: 18px;
+    margin-left: 10px;
+    display: inline-block;
+    color: #292929;
+    font-family: 'Inter', sans-serif;
+}
+
+#text-details-container{
+    margin-top: 40px;
 }
