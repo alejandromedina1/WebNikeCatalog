@@ -10,6 +10,20 @@ window.addEventListener("scroll", function () {
     }
 })
 
+let menuToggle = document.getElementById("dropdown-btn");
+menuToggle.addEventListener('click', function (){
+    dropdown()
+})
+
+function dropdown() {
+    let nav = document.getElementById("my_topnav");
+    if (nav.className === "topnav") {
+      nav.className += " dropdown-content";
+    } else {
+      nav.className = "topnav";
+    }
+}
+
 async function getData(){
     const message = {
         method: 'GET',
@@ -24,24 +38,35 @@ async function getData(){
 }
 
 const shoesList = await getData();
+let filteredShoes= shoesList;
 const cardsContainer = document.getElementById('cards_container');
-const categoryButtons = document.querySelectorAll('#categories a');
+const categoryFilters = document.querySelectorAll('#target a');
+categoryFilters.forEach(filter => filter.addEventListener('click', ()=> setCategory(filter)))
 
-categoryButtons.forEach(btn => btn.addEventListener('click', ()=> setCategory(btn)))
+const collectionFilters = document.querySelectorAll('#collection a');
+collectionFilters.forEach(filter => filter.addEventListener('click', ()=> setCollection(filter)))
+
+const priceFilterLtH = document.querySelector('#low_to_high');
+priceFilterLtH.addEventListener('click', ()=> renderShoesLowToHigh());
+
+const priceFilterHtL = document.querySelector('#high_to_low');
+priceFilterHtL.addEventListener('click', ()=> renderShoesHighToLow());
+
+const colorFilters = document.querySelectorAll('#color button');
+colorFilters.forEach(filter => filter.addEventListener('click', ()=> setColor(filter)))
 
 console.log(Array.isArray(shoesList))
-renderShoes(false);
+renderShoes('All');
 function renderShoes(category){
 
-    let filteredShoes= [];
+   
     cardsContainer.innerHTML=''
 
-    if (!category || category === 'All') {
+    if (category === 'All') {
         filteredShoes = shoesList;
     }else {
-        filteredShoes = shoesList.filter(shoe => shoe.category === category)
+        filteredShoes = filteredShoes.filter(shoe => shoe.category === category)
     }
-    console.log(filteredShoes)
 
     filteredShoes.forEach(shoe =>{
         const nikeShoe = document.createElement('nike-card')
@@ -49,10 +74,8 @@ function renderShoes(category){
         nikeShoe.setAttribute('price', shoe.price)
         nikeShoe.setAttribute('product_image', shoe.urlImage)
         nikeShoe.setAttribute('category', shoe.category)
-        nikeShoe.setAttribute('description', shoe.description)
         nikeShoe.setAttribute('colors', shoe.color)
-        nikeShoe.setAttribute('description', shoe.description)
-    
+     
         cardsContainer.append(nikeShoe)
     });
 }
@@ -62,3 +85,101 @@ function setCategory(event){
     console.log(event.textContent)
     renderShoes(category);
 }
+
+function renderShoesCollection(collection){
+
+   
+    cardsContainer.innerHTML=''
+
+    if (collection === 'All') {
+        filteredShoes = shoesList;
+    }else {
+        filteredShoes = filteredShoes.filter(shoe => shoe.collection === collection)
+    }
+
+    filteredShoes.forEach(shoe =>{
+        const nikeShoe = document.createElement('nike-card')
+        nikeShoe.setAttribute('name', shoe.name)
+        nikeShoe.setAttribute('price', shoe.price)
+        nikeShoe.setAttribute('product_image', shoe.urlImage)
+        nikeShoe.setAttribute('category', shoe.category)
+        nikeShoe.setAttribute('colors', shoe.color)
+     
+        cardsContainer.append(nikeShoe)
+    });
+}
+
+function setCollection(event){
+    const collection = event.textContent
+    console.log(event.textContent)
+    renderShoesCollection(collection);
+}
+
+function renderShoesLowToHigh(){
+
+    
+    cardsContainer.innerHTML=''
+    filteredShoes = filteredShoes.sort(((a, b) => a.price - b.price))
+       
+    filteredShoes.forEach(shoe =>{
+        const nikeShoe = document.createElement('nike-card')
+        nikeShoe.setAttribute('name', shoe.name)
+        nikeShoe.setAttribute('price', shoe.price)
+        nikeShoe.setAttribute('product_image', shoe.urlImage)
+        nikeShoe.setAttribute('category', shoe.category)
+        nikeShoe.setAttribute('colors', shoe.color)
+     
+        cardsContainer.append(nikeShoe)
+    });
+}
+
+function renderShoesHighToLow(){
+
+    
+    cardsContainer.innerHTML=''
+    filteredShoes = filteredShoes.sort(((a, b) => b.price - a.price))
+       
+    filteredShoes.forEach(shoe =>{
+        const nikeShoe = document.createElement('nike-card')
+        nikeShoe.setAttribute('name', shoe.name)
+        nikeShoe.setAttribute('price', shoe.price)
+        nikeShoe.setAttribute('product_image', shoe.urlImage)
+        nikeShoe.setAttribute('category', shoe.category)
+        nikeShoe.setAttribute('colors', shoe.color)
+     
+        cardsContainer.append(nikeShoe)
+    });
+}
+
+function renderShoesColors(color){
+
+    
+    cardsContainer.innerHTML=''
+
+    if (color === 'All') {
+        filteredShoes = shoesList;
+    }else {
+        filteredShoes = filteredShoes.filter(shoe => shoe.color.includes(color)=== true)
+    }
+
+    console.log(filteredShoes)
+
+    filteredShoes.forEach(shoe =>{
+        const nikeShoe = document.createElement('nike-card')
+        nikeShoe.setAttribute('name', shoe.name)
+        nikeShoe.setAttribute('price', shoe.price)
+        nikeShoe.setAttribute('product_image', shoe.urlImage)
+        nikeShoe.setAttribute('category', shoe.category)
+        nikeShoe.setAttribute('colors', shoe.color)
+     
+        cardsContainer.append(nikeShoe)
+    });
+}
+
+function setColor(event){
+    const color = event.textContent
+    console.log(event.textContent)
+    renderShoesColors(color);
+}
+
+

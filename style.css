@@ -35,7 +35,7 @@ li {
     align-items: center;
     width: 100%;
     z-index: 10;
-    background-color: #1E1E1E;
+    
 }
 
 #mobile-menu {
@@ -544,6 +544,15 @@ hr {
         z-index: 10;
     }
 
+    .list-menu {
+        position: relative;
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.7s;
+    }
+
     .dropdown-content {
         display: none;
         position: absolute;
@@ -560,6 +569,11 @@ hr {
         text-decoration: none;
         display: block;
         text-align: left;
+    }
+
+    .topnav ul{
+        display: flex;
+        flex-direction: column;
     }
 
     h1 {
