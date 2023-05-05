@@ -17,10 +17,10 @@ menuToggle.addEventListener('click', function () {
 
 function dropdown() {
     let nav = document.getElementById("my_topnav");
-    if (nav.className === "topnav") {
+    if (nav.className === "topnavdrop") {
         nav.className += " dropdown-content";
     } else {
-        nav.className = "topnav";
+        nav.className = "topnavdrop";
     }
 }
 
