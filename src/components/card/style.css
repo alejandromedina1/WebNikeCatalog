@@ -137,6 +137,7 @@ ul {
 #catalog {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 /*filtros*/
@@ -378,7 +379,7 @@ hr {
     }
 
     .dropdown{
-        display: flex;
+    display: flex;
     flex-direction: column;
     align-items: end;
 }
@@ -388,7 +389,7 @@ hr {
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 16;
+        z-index: 30;
         width: 100%;
         background-color: #1E1E1E;
     }
@@ -448,18 +449,6 @@ hr {
         display: none;
     }
 
-    .show{
-        position: absolute;
-        display: none;
-        width:  100%;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: left;
-    }
-    .show:hover{
-        background-color: white;
-    }
-    
     #categories-mobile {
         display: flex;
         flex-direction: row;
@@ -468,23 +457,25 @@ hr {
         text-align: left;
         font-weight: 700;
         width: 100%;
-        height: 300px;
+        height: 90px;
         position: fixed;
-        top: 80px;
+        top: 70px;
         margin: 0;
         padding: 0;
         left: 0;
-        z-index: 10;
+        z-index: 20;
         gap: 15px;
         transition: box-shadow;
+        background-color: #F6F6F6;
         box-shadow: 0 10px 25px -20px #1e1e1e;
     }
     
-    .filter {
+    .filter-dropdown {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        width: 70px;
         color: #1E1E1E;
     }
     
@@ -500,6 +491,7 @@ hr {
         height: 370px;
         width: 180px;
         padding: 16px;
+        margin: 0;
         border-radius: 8px;
         background-color: white;
         transition: box-shadow;
@@ -513,16 +505,16 @@ hr {
     }
 
     #cards_container {
-        margin: 100px 0;
-        padding: 4.2rem 0;
+        margin-top: 100px;
+        padding: 5.8rem 0 0 0;
         height: 100%;
-        width: 80%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
         flex-wrap: wrap;
         left: 0;
-        row-gap: 20px;
+        gap: 30px 20px;
     }
 
     #info_card {
