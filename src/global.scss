@@ -27,19 +27,18 @@ li {
     list-style: none;
 }
 
+#mobile-menu {
+    display: none;
+}
+
 #desktop-menu {
     padding: 15px 50px;
     position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     z-index: 10;
-    
-}
-
-#mobile-menu {
-    display: none;
 }
 
 #logo-img {
@@ -50,8 +49,9 @@ li {
 #principal-menu {
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    gap: 50px;
     position: relative;
     transition: 0.7s;
     top: 0;
@@ -63,8 +63,10 @@ li {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .list-item {
@@ -107,12 +109,14 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .material-symbols-outlined {
     color: white;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .abajo {

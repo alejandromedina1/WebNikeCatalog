@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike</title>
+  <link rel="stylesheet" href="../global.scss">
+  <link rel="stylesheet" href="../components/card/style.scss">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200"
+    rel="stylesheet"   />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  
+</head>
+
+<body>
+    
+  <header id="desktop-menu">
+    <top-nav-bar-desktop></top-nav-bar-desktop>
+  </header>
+
+  <header id="mobile-menu">
+    <top-nav-bar-mobile></top-nav-bar-mobile>
+  </header>
+
+  <main>
+    <section id="catalog">
+      <div id="categories-desktop">
+        <div id="target" class="filter static">
+          <h4>Category</h4>
+          <a href="#" class="nav-link list-item filter show ">All</a>
+          <a href="#" class="nav-link list-item filter show ">Men's Shoes</a>
+          <a href="#" class="nav-link list-item filter show  ">Women's Shoes</a>
+          <a href="#" class="nav-link list-item filter show ">Big Kids' Easy On/Off Shoes</a>
+          <a href="#" class="nav-link list-item filter show ">Baby/Toddler Shoes</a>
+          <a href="#" class="nav-link list-item filter show ">Golf Shoes</a>
+        </div>
+
+        <div id="collection" class="filter static">
+          <h4>Collection</h4>
+          <a href="#" class="nav-link list-item filter show ">All</a>
+          <a href="#" class="nav-link list-item filter show ">Air Max 90</a>
+          <a href="#" class="nav-link list-item filter show ">Air Max 97</a>
+          <a href="#" class="nav-link list-item filter show ">Air Max 270</a>
+          <a href="#" class="nav-link list-item filter show ">Air Max VaporMax</a>
+        </div>
+
+        <div id="price" class="filter static">
+          <h4>Price</h4>
+          <a href="#" class="nav-link list-item filter show " id="low_to_high">Lowest to highest</a>
+          <a href="#" class="nav-link list-item filter show " id="high_to_low">Highest to lowest</a>
+        </div>
+
+        <div id="color" class="filter static">
+          <h4>Color</h4>
+          <!--brown, pink, white, yellow, blue, grey, black, orange, green, gold, red, peach, olive, light gold, lilac, light green, dark green-->
+          <div id="color-button-container">
+
+            <button
+              style="background-color: #F6F6F6; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">All</button>
+            <button
+              style="background-color: white; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">White</button>
+            <button
+              style="background-color: lightgoldenrodyellow; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Light Gold</button>
+            <button
+              style="background-color: yellow; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Yellow</button>
+            <button
+              style="background-color: gold; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Gold</button>
+            <button
+              style="background-color: orange; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Orange</button>
+            <button
+              style="background-color: red; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Red</button>
+            <button
+              style="background-color: peachpuff; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Peachpuff</button>
+            <button
+              style="background-color: pink; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Pink</button>
+            <button
+              style="background-color: plum; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Plum</button>
+            <button
+              style="background-color: DeepSkyBlue; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">DeepSkyBlue</button>
+            <button
+              style="background-color: Teal; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Teal</button>
+            <button
+              style="background-color: MidnightBlue; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">MidnightBlue</button>
+            <button
+              style="background-color: YellowGreen; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">YellowGreen</button>
+            <button
+              style="background-color: olive; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Olive</button>
+            <button
+              style="background-color: darkgreen; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Dark Green</button>
+            <button
+              style="background-color: SaddleBrown; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">SaddleBrown</button>
+            <button
+              style="background-color: grey; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Grey</button>
+            <button
+              style="background-color: black; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Black</button>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="categories-mobile">
+        <div id="target" class="filter static">
+          <h4>Category</h4>
+          <select name="" id="target-mobile" class="filter-dropdown">
+          <option value="All">All</option> 
+          <option value="Men's Shoes">Men's Shoes</option> 
+          <option value="Women's Shoes">Women's Shoes</option> 
+          <option value="Big Kids' Easy On/Off Shoes">Big Kids' Easy On/Off Shoes</option> 
+          <option value="Baby/Toddler Shoes">Baby/Toddler Shoes</option> 
+          <option value="Golf Shoes">Golf Shoes</option> 
+          </select>
+        </div>
+
+        <div id="collection" class="filter static">
+          <h4>Collection</h4>
+          <select name="" id="collection-mobile" class="filter-dropdown">
+            <option value="All">All</option> 
+            <option value="Air Max 90">Air Max 90</option> 
+            <option value="Air Max 97">Air Max 97</option> 
+            <option value="Air Max 270">Air Max 270</option> 
+            <option value="Air Max VaporMax">Air Max VaporMax</option> 
+          </select>
+        </div>
+
+        <div id="price" class="filter static">
+          <h4>Price</h4>
+          <select name="" id="price-mobile" class="filter-dropdown">
+            <option value="All">All</option> 
+            <option value="Lowest to Highest">Lowest to highest</option> 
+            <option value="Highest to Lowest">Highest to lowest</option> 
+          </select>
+        </div>
+
+        <div id="color" class="filter static">
+          <h4>Color</h4>
+          <!--brown, pink, white, yellow, blue, grey, black, orange, green, gold, red, peach, olive, light gold, lilac, light green, dark green-->
+          <select name="" id="colors-mobile" class="filter-dropdown">
+            <option value="All"><button
+              style="background-color: #F6F6F6; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">All</button></option> 
+            <option value="White"><button
+              style="background-color: white; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">White</button></option> 
+            <option value="lightgoldenrodyellow"><button
+              style="background-color: lightgoldenrodyellow; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Light Gold</button></option> 
+            <option value="Yellow"><button
+              style="background-color: yellow; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Yellow</button></option> 
+            <option value="Gold"><button
+              style="background-color: gold; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Gold</button></option> 
+            <option value="Orange"><button
+              style="background-color: orange; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Orange</button></option>
+            <option value="Red"><button
+              style="background-color: red; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Red</button></option> 
+            <option value="Peachpuff"><button
+              style="background-color: peachpuff; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Peachpuff</button></option> 
+            <option value="Pink"><button
+              style="background-color: pink; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Pink</button></option>
+            <option value="Plum"><button
+              style="background-color: plum; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Plum</button></option> 
+            <option value="DeepSkyBlue"><button
+              style="background-color: DeepSkyBlue; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">DeepSkyBlue</button></option> 
+            <option value="Teal"><button
+              style="background-color: Teal; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Teal</button></option> 
+            <option value="MidnightBlue"><button
+              style="background-color: MidnightBlue; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">MidnightBlue</button></option>
+            <option value="YellowGreen"><button
+              style="background-color: YellowGreen; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">YellowGreen</button></option> 
+            <option value="Olive"><button
+              style="background-color: olive; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Olive</button></option> 
+            <option value="Dark Green"><button
+              style="background-color: darkgreen; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Dark Green</button></option> 
+            <option value="SaddleBrown"><button
+              style="background-color: SaddleBrown; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">SaddleBrown</button></option> 
+            <option value="Grey"><button
+              style="background-color: grey; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Grey</button></option> 
+            <option value="Black"><button
+              style="background-color: black; width: 40px; height: 40px; margin: 5px; border: 1px solid rgb(163, 163, 163); border-radius: 100px;"
+              class="color-button show ">Black</button></option> 
+          </select>
+        </div>
+      </div>
+
+      <section id="shoes-container">
+
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <section id="footer-section-resources">
+      <figure>
+        <img src="./Images/nike logo blanco.png" alt="" id="footer-logo">
+      </figure>
+      <ul class="options">
+        <li>Gift Cards</li>
+        <li>Promotions</li>
+        <li>Find a Store</li>
+        <li>Sign Up For Emails</li>
+        <li>Become a Member</li>
+        <li>Nike Journal</li>
+      </ul>
+      <ul class="resources">
+        <li class="options">Get Help</li>
+        <li>Order status</li>
+        <li>Shipping and Delivery</li>
+        <li>Returns</li>
+        <li>Payment Options</li>
+        <li>Gift Cards Balance</li>
+      </ul>
+      <ul class="resources">
+        <li class="options">About Nike</li>
+        <li>News</li>
+        <li>Careers</li>
+        <li>Investors</li>
+        <li>Purpose</li>
+        <li>Sustainability</li>
+      </ul>
+      <ul class="resources">
+        <li>Guides</li>
+        <li>Terms of Sale</li>
+        <li>Terms of Use</li>
+        <li>Nike Privacy Policy</li>
+        <li>CA Supply Chains Act</li>
+      </ul>
+    </section>
+    <section id="footer-section-mark">
+      <hr>
+      <p>© 2023 Nike, Inc. All Rights Reserved</p>
+    </section>
+  </footer>
+
+  <script type="module" src="../components/top_navBar/navBarDesktop.js"></script>
+  <script type="module" src="../components/top_navBar/navBarMobile.js"></script>
+  <script type="module" src="../catalog/catalog.js"></script>
+  <script type="module" src="../importWebComponents.js"></script>
+  <script type="module" src="../components/card/card.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</body>
+
+</html>
