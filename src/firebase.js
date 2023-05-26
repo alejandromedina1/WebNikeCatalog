@@ -26,7 +26,7 @@ export async function getShoes(){
     const allShoes = [];
     const querySnapshot = await getDocs(collection(db, "nike-shoes"));
     querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data()}`);
+    //console.log(`${doc.id} => ${doc.data().name}`);
     allShoes.push({...doc.data(), id: doc.id})
     });
     return allShoes
