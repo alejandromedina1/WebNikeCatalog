@@ -29,6 +29,10 @@ class NavBarMobile extends HTMLElement {
               shopping_cart
             </span>
           </a>
+          <a href = "/login/"><span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                </a>
         </div>
         <div id="list-menu" class="dropdown">
           <a><span class="material-symbols-outlined" id="dropdown-btn">
