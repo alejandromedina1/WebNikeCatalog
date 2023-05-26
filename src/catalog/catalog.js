@@ -4,37 +4,13 @@ import '../components/card/card.js'
 
 let shoesList = []
 await retrieveShoes()
-//renderShoes()
 
+let menu = document.getElementById('desktop-menu');
+menu.style.backgroundColor = '#1e1e1e'
 
 async function retrieveShoes() {
     shoesList = await getShoes()
 }
-/*
-async function renderShoes() {
-    const cardsContainer = document.querySelector('#shoes-container')
-    await retrieveShoes()
-    shoes.forEach((shoe) => {
-        const nikeShoe = document.createElement('nike-card')
-            nikeShoe.setAttribute('name', shoe.name)
-            nikeShoe.setAttribute('price', shoe.price)
-            nikeShoe.setAttribute('product_image', shoe.urlImage)
-            nikeShoe.setAttribute('category', shoe.category)
-            nikeShoe.setAttribute('colors', shoe.color)
-
-            cardsContainer.append(nikeShoe)
-    })
-}*/
-
-window.addEventListener("scroll", function () {
-    var header = this.document.getElementById("categories");
-    let scrollTop = this.document.documentElement.scrollTop;
-    if (header.offsetTop < scrollTop) {
-        header.style.marginTop = '0';
-    } else {
-        header.style.marginTop = '100px';
-    }
-})
 
 let menuToggle = document.getElementById("dropdown-btn");
 menuToggle.addEventListener('click', function () {
@@ -67,30 +43,24 @@ const colorFilters = document.querySelectorAll('#color button');
 renderShoes('All');
 
 function detectarDispositivo() {
-    // Patrones de expresión regular para buscar en el user agent
     var patronesMoviles = [/Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i];
 
-    // Obtener el user agent del navegador
     var userAgent = navigator.userAgent;
 
-    // Comprobar si alguno de los patrones de dispositivo móvil coincide con el user agent
     for (var i = 0; i < patronesMoviles.length; i++) {
         if (userAgent.match(patronesMoviles[i])) {
             return "mobile";
         }
     }
 
-    // Si no se encuentra ningún patrón de dispositivo móvil, se asume que es de escritorio
     return "desktop";
 }
 
-// Ejemplo de uso
 var tipoDispositivo = detectarDispositivo();
-
 
 function renderShoes(category) {
 
-    //cardsContainer.innerHTML = ''
+    cardsContainer.innerHTML = ''
 
     if (category === 'All') {
         filteredShoes = shoesList;
@@ -141,7 +111,7 @@ if (tipoDispositivo === "desktop") {
 
     function renderShoesCollection(collection) {
 
-        //cardsContainer.innerHTML = ''
+        cardsContainer.innerHTML = ''
 
         if (collection === 'All') {
             filteredShoes = shoesList;
@@ -170,7 +140,7 @@ if (tipoDispositivo === "desktop") {
     function renderShoesLowToHigh() {
 
 
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
         filteredShoes = filteredShoes.sort(((a, b) => a.price - b.price))
 
         filteredShoes.forEach(shoe => {
@@ -188,7 +158,7 @@ if (tipoDispositivo === "desktop") {
     function renderShoesHighToLow() {
 
 
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
         filteredShoes = filteredShoes.sort(((a, b) => b.price - a.price))
 
         filteredShoes.forEach(shoe => {
@@ -206,15 +176,13 @@ if (tipoDispositivo === "desktop") {
     function renderShoesColors(color) {
 
 
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
 
         if (color === 'All') {
             filteredShoes = shoesList;
         } else {
             filteredShoes = filteredShoes.filter(shoe => shoe.color.includes(color) === true)
         }
-
-        console.log(filteredShoes)
 
         filteredShoes.forEach(shoe => {
             const nikeShoe = document.createElement('nike-card')
@@ -236,6 +204,16 @@ if (tipoDispositivo === "desktop") {
 
     
 } else {
+
+    window.addEventListener("scroll", function () {
+        var header = this.document.getElementById("categories");
+        let scrollTop = this.document.documentElement.scrollTop;
+        if (header.offsetTop < scrollTop) {
+            header.style.marginTop = '0';
+        } else {
+            header.style.marginTop = '100px';
+        }
+    })
    
     const categoryFiltersMobile = document.getElementById('target-mobile');
     categoryFiltersMobile.addEventListener('change', () => setCategory(categoryFiltersMobile.value))
@@ -256,7 +234,7 @@ if (tipoDispositivo === "desktop") {
 
     function renderShoesCollection(collection) {
 
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
 
         if (collection === 'All') {
             filteredShoes = shoesList;
@@ -283,7 +261,7 @@ if (tipoDispositivo === "desktop") {
 
     function renderShoesLowToHigh() {
 
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
         filteredShoes = filteredShoes.sort(((a, b) => a.price - b.price))
 
         filteredShoes.forEach(shoe => {
@@ -299,7 +277,7 @@ if (tipoDispositivo === "desktop") {
     }
 
     function renderShoesHighToLow() {
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
         filteredShoes = filteredShoes.sort(((a, b) => b.price - a.price))
 
         filteredShoes.forEach(shoe => {
@@ -324,7 +302,7 @@ if (tipoDispositivo === "desktop") {
     }
 
     function renderShoesColors(color) {
-        // cardsContainer.innerHTML = ''
+         cardsContainer.innerHTML = ''
 
         if (color === 'All') {
             filteredShoes = shoesList;
