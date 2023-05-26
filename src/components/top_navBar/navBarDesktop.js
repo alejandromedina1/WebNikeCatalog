@@ -54,6 +54,10 @@ class NavBarDesktop extends HTMLElement {
                     shopping_cart
                 </span>
                 </a>
+                <a href = "/login/"><span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                </a>
             </div>
             </nav>
         `;

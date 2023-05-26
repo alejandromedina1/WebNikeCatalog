@@ -5,6 +5,12 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { getFirestore, addDoc, getDocs, setDoc, doc, collection } from "firebase/firestore";
 
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
+} from "firebase/auth";
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -21,6 +27,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 export async function getShoes(){
     const allShoes = [];
@@ -30,4 +37,56 @@ export async function getShoes(){
     allShoes.push({...doc.data(), id: doc.id})
     });
     return allShoes
+}
+
+export async function createUser(userInfo) {
+  try {
+      //Sign up
+      const userCredential = await createUserWithEmailAndPassword(auth, userInfo.email, userInfo.password)
+      const user = userCredential.user
+      console.log(user)
+
+      //Subir Imagen
+      const url = await uploadFile(user.id + userInfo.picture.name, userInfo.picture, 'profilePicture')
+
+      //Crear usuario en DB
+      const dbInfo = {
+          url,
+          email: userInfo.email,
+          birthday: userInfo.birthday,
+          username: userInfo.username
+      }
+      addUserToDb(dbInfo, user.id)
+  } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(error.message)
+      // ..
+  }
+}
+
+export async function uploadFile(name, file, folder) {
+  const taskImgRef = ref(storage, `${folder}/${name}`);
+
+  try {
+      await uploadBytes(taskImgRef, file);
+      const url = await getDownloadURL(taskImgRef);
+      return url;
+  } catch (error) {
+      console.log("error creando imagen ->", error);
+  }
+}
+
+export async function logInUser(email, password) {
+
+  try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password)
+      const user = userCredential.user;
+      return {status: true, info: user.id}
+
+  } catch (error) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      return {status: false, info: errorMessage}
+  };
 }

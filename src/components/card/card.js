@@ -40,7 +40,7 @@ class Card extends HTMLElement {
             <h1 class="product_title">${this.name}</h1>
             <hr />
             <h3 class="category_style">${this.category}</h3>
-            <a href="/details/?name=${this.formatName(this.name)}" class="product_btn btn">SEE MORE</a>
+            <a href="/about/?name=${this.formatName(this.name)}" class="product_btn btn">SEE MORE</a>
         </div>
         </article>`;
     }
