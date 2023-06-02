@@ -6,6 +6,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getFirestore, addDoc, getDocs, setDoc, doc, collection } from "firebase/firestore";
 
 import {
+  getStorage,
+  ref,
+  uploadBytes,
+  getDownloadURL
+} from "firebase/storage";
+
+import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword
@@ -39,6 +46,15 @@ export async function getShoes(){
     return allShoes
 }
 
+export async function addUserToDb(userInfo, id) {
+  try {
+      await setDoc(doc(db, "users", id), userInfo);
+      console.log("user written with ID: ", id);
+  } catch (e) {
+      console.error("Error adding user: ", e);
+  }
+}
+
 export async function createUser(userInfo) {
   try {
       //Sign up
@@ -47,11 +63,11 @@ export async function createUser(userInfo) {
       console.log(user)
 
       //Subir Imagen
-      const url = await uploadFile(user.id + userInfo.picture.name, userInfo.picture, 'profilePicture')
+      //const url = await uploadFile(user.id + userInfo.picture.name, userInfo.picture, 'profilePicture')
 
       //Crear usuario en DB
       const dbInfo = {
-          url,
+          //url: userInfo.url,
           email: userInfo.email,
           birthday: userInfo.birthday,
           username: userInfo.username
