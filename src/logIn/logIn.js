@@ -1,4 +1,4 @@
-
+import './style.scss'
 import { logInUser } from "../firebase"
 
 

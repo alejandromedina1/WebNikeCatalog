@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./style.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <h1>Inicia Sesión</h1>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email-input">
+    <main>
+        <div id="card">
+            <div id="form">
+                <img id="logo" src="/nike logo blanco.png" alt="">
+                <h1 id="title">Sign in</h1>
+                <label for="email">Email:</label>
+                <input type="email" placeholder="Email" name="email" id="email-input">
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password-input">
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Password" name="password" id="password-input">
 
-        <button id="form-button">Inicia Sesión</button>
-    <p>¿No tienes una cuenta? <a href="/sign-up/"> Creala aquí</a></p>
+                <button id="form-button">Sign in</button>
+                <p>Don't have an account? <a id="link-signup" href="/sign-up/"> Sign up</a></p>
+            </div>
+        </div>
+    </main>
     <script type="module" src="./login.js"></script>
 </body>
+
 </html>
