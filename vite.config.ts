@@ -16,7 +16,9 @@ export default defineConfig({
                 "catalog": resolve(root, 'catalog', 'index.html'),
                 "sign-up": resolve(root, 'sign-up', 'index.html'),
                 "login": resolve(root, 'logIn', 'index.html'),
+                "add-products": resolve(root, 'add-products', 'index.html'),
             }
-        }
+        },
+        target: 'esnext'
     }
 })
