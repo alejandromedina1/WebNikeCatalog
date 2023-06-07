@@ -50,6 +50,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const storage = getStorage(app)
 const db = getFirestore(app);
 const auth = getAuth(app);
 
@@ -79,6 +80,26 @@ export async function getShoes() {
   return allShoes
 }
 
+export async function addShoes(product) {
+  try {
+      const docRef = await addDoc(collection(db, "nike-shoes"), product);
+
+      console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+      console.error("Error adding document: ", e);
+  }
+}
+
+export async function addShoesWithId(product, id, file) {
+  try {
+      const imageUrl = await uploadFile(file.name, file, 'nike-shoes');
+
+      await setDoc(doc(db, "nike-shoes", id), {...product, urlImage: imageUrl });
+  } catch (e) {
+      console.error("Error adding document: ", e);
+  }
+}
+
 export async function addUserToDb(userInfo, id) {
   try {
     await setDoc(doc(db, "users", id), userInfo);
@@ -96,20 +117,23 @@ export async function createUser(userInfo) {
     console.log(user)
 
     //Subir Imagen
-    //const url = await uploadFile(user.id + userInfo.picture.name, userInfo.picture, 'profilePicture')
+    const imageUrl = await uploadFile(userInfo.url.name, userInfo.url, 'users')
 
     //Crear usuario en DB
     const dbInfo = {
       //url: userInfo.url,
       email: userInfo.email,
-      birthday: userInfo.birthday,
+      imageUrl: imageUrl,
       username: userInfo.username
     }
-    addUserToDb(dbInfo, user.id)
+    await addUserToDb(dbInfo, user.uid)
+
+    return { status: true, info: user.uid };
+
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
-    alert(error.message)
+    return { status: false, info: errorMessage };
     // ..
   }
 }

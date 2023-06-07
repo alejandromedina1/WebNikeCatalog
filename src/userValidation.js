@@ -3,9 +3,9 @@ export function userValidation(userIsSignedIn) {
     const path = window.location.pathname
     if (!userIsSignedIn) {
         const isHome = path === '/'
-        const isLogIn = path.includes('logIn')
+        const isLogIn = path.includes('sign-up')
         if (!isHome && !isLogIn) {
-            window.location.replace('/logIn/')
+            window.location.replace('/sign-up/')
             
         }
     } else {
