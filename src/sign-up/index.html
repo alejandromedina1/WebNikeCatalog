@@ -6,26 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
+    <link rel="stylesheet" href="./style.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Crea una cuenta</h1>
-    <form action="submit" id="sign-up-form">
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email-input">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username-input">
-        <label for="email">Birthday:</label>
-        <input type="date" name="birthday" id="birthday-input">
-        <label for="picture">Profile Picture:</label>
-        <input type="file" accept="image/*" name="picture" id="file-input">
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password-input">
-        <label for="conf">Confirm password:</label>
-        <input type="password" name="conf" id="conf-password-input">
-        <button type="button" id="form-button">Crear Cuenta</button>
-    </form>
-    <p>¿Ya tienes una cuenta? <a href="/login/"> Inicia sesión</a></p>
+    <main>
+        <div id="card">
+
+            <img id="logo" src="/nike logo blanco.png" alt="">
+            <h1 id="title">Sign up</h1>
+            <form action="submit" id="sign-up-form">
+                <label for="email">Email:</label>
+                <input placeholder="Email" type="email" name="email" id="email-input">
+                <label for="username">Username:</label>
+                <input placeholder="Username" type="text" name="username" id="username-input">
+                <label for="email">Birthday:</label>
+                <input type="date" name="birthday" id="birthday-input">
+                <label for="picture">Profile Picture:</label>
+                <input type="file" accept="image/*" name="picture" id="picture-input">
+                <label for="password">Password:</label>
+                <input placeholder="Password" type="password" name="password" id="password-input">
+                <label for="conf">Confirm password:</label>
+                <input placeholder="Confirm password" type="password" name="conf" id="conf-password-input">
+                <button id="form-button">Sign up</button>
+            </form>
+            <p>Already have an account? <a id="link-signin" href="/login/">Sign in</a></p>
+
+        </div>
+       
+    </main>
+
     <script type="module" src="./sign-up.js"></script>
 </body>
 
