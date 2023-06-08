@@ -208,3 +208,28 @@ export async function logOut() {
     console.error(error)
   }
 }
+
+export async function sendProductToCart(product) {
+  try {
+    const docRef = await addDoc(collection(db, "cart"), product);
+
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
+export async function getProductsFromCart () {
+  const allShoes = [];
+  const querySnapshot = await getDocs(collection(db, "cart"));
+  querySnapshot.forEach((doc) => {
+    //console.log(`${doc.id} => ${doc.data().name}`);
+    allShoes.push({
+      ...doc.data(),
+      id: doc.id
+    })
+  });
+  return allShoes
+}
+
+
