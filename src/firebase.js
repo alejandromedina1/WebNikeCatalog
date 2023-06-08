@@ -32,7 +32,8 @@ import {
 } from "firebase/auth";
 
 import {
-  userValidation
+  userValidation,
+  adminAccess
 } from "./userValidation.js";
 
 // Your web app's Firebase configuration
@@ -54,18 +55,22 @@ const storage = getStorage(app)
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   console.log('cambio en la autenticación')
   if (user) {
     //const uid = user.uid;
     // ...
+    
+    validateAdmin(user)
     userValidation(true)
+
   } else {
     // User is signed out
     // ...
     userValidation(false)
   }
 });
+
 
 export async function getShoes() {
   const allShoes = [];
@@ -82,21 +87,24 @@ export async function getShoes() {
 
 export async function addShoes(product) {
   try {
-      const docRef = await addDoc(collection(db, "nike-shoes"), product);
+    const docRef = await addDoc(collection(db, "nike-shoes"), product);
 
-      console.log("Document written with ID: ", docRef.id);
+    console.log("Document written with ID: ", docRef.id);
   } catch (e) {
-      console.error("Error adding document: ", e);
+    console.error("Error adding document: ", e);
   }
 }
 
 export async function addShoesWithId(product, id, file) {
   try {
-      const imageUrl = await uploadFile(file.name, file, 'nike-shoes');
+    const imageUrl = await uploadFile(file.name, file, 'nike-shoes');
 
-      await setDoc(doc(db, "nike-shoes", id), {...product, urlImage: imageUrl });
+    await setDoc(doc(db, "nike-shoes", id), {
+      ...product,
+      urlImage: imageUrl
+    });
   } catch (e) {
-      console.error("Error adding document: ", e);
+    console.error("Error adding document: ", e);
   }
 }
 
@@ -107,6 +115,37 @@ export async function addUserToDb(userInfo, id) {
   } catch (e) {
     console.error("Error adding user: ", e);
   }
+}
+
+export async function validateAdmin(user) {
+  const userCollection = collection(db, 'users')
+  const query = userCollection.where("uid", "==", user.uid)
+
+  getDocs(query)
+      .then((querySnapshot) => {
+        if (querySnapshot.size > 0) {
+          // El documento del usuario fue encontrado
+          const userData = querySnapshot.docs[0].data();
+          const userRole = userData.isAdmin;
+
+          // Verifica si el usuario es un administrador
+          if (userRole) {
+            // El usuario es un administrador
+            console.log("El usuario es un administrador");
+            adminAccess(user, userRole)
+          } else {
+            // El usuario no es un administrador
+            console.log("El usuario no es un administrador");
+            adminAccess(user, userRole)
+          }
+        } else {
+          // No se encontró el documento del usuario
+          console.log("No se encontró el documento del usuario");
+        }
+      })
+      .catch((error) => {
+        console.error("Error al obtener el documento del usuario:", error);
+      });
 }
 
 export async function createUser(userInfo) {
@@ -124,16 +163,23 @@ export async function createUser(userInfo) {
       //url: userInfo.url,
       email: userInfo.email,
       imageUrl: imageUrl,
-      username: userInfo.username
+      username: userInfo.username,
+      isAdmin: userInfo.isAdmin
     }
     await addUserToDb(dbInfo, user.uid)
 
-    return { status: true, info: user.uid };
+    return {
+      status: true,
+      info: user.uid
+    };
 
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
-    return { status: false, info: errorMessage };
+    return {
+      status: false,
+      info: errorMessage
+    };
     // ..
   }
 }
