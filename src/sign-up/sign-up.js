@@ -21,7 +21,8 @@ function signUp(e) {
         username: username,
         birthday: birthday,
         url: urlImage,
-        password: password
+        password: password,
+        isAdmin: false
     }
 
 
