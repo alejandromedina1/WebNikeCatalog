@@ -1,5 +1,5 @@
 import '../global.scss'
-import { addShoes, addShoesWithId ,logOut } from '../firebase' 
+import { addShoesWithId ,logOut } from '../firebase' 
 
 const nameInput = document.getElementById('name-input')
 const collectionInput = document.getElementById('collection-input')
