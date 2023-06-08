@@ -29,9 +29,8 @@
     width: 20%;
     height: 100vh;
     position: fixed;
-    top: 1%;
+    top: 10%;
     left: 0;
-    margin-top: 120px;
     gap: 40px;
     transition: box-shadow;
     box-shadow: 0 10px 25px -20px #1e1e1e;
@@ -43,6 +42,10 @@
     align-items: start;
     text-align: left;
     color: #1E1E1E;
+    & .active {
+        color: #CE011E;
+        text-decoration: underline;
+    }
 }
 
 .filter h4 {
@@ -67,7 +70,7 @@
 
 /*shoes cards*/
 #shoes-container {
-    padding: 8rem 3rem;
+    padding: 9rem 3rem;
     height: 100%;
     width: 80%;
     display: flex;
@@ -151,7 +154,7 @@ nike-card{
     display: inline-block;
     color: white;
     text-align: center;
-    padding: 1em 2rem;
+    padding: 1rem 2rem;
     white-space: nowrap;
     border-radius: 18px;
     font-size: 1.2rem;
@@ -173,6 +176,30 @@ nike-card{
 .category_style {
     padding: 10px 0;
     font-size: 1.5rem;
+}
+
+#buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    & .material-symbols-outlined {
+        background-color: #CE011E;
+        padding: 1rem;
+        border-radius: 50px;
+        color: white;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover{
+            background-color: #1e1e1e;
+            color: white;
+        }
+    }
 }
 
 /* footer*/
@@ -246,6 +273,13 @@ hr {
     color: #A3A3A3;
 }
 
+//
+@media (max-width: 1393px) {
+    nike-card{
+        width: 45%;
+    }
+}
+
 /*mobile styles*/
 
 @media (max-width: 800px) {
@@ -258,6 +292,21 @@ hr {
     flex-direction: column;
     align-items: end;
 }
+
+    #catalog{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #shoes-container {
+        width: 100%;
+        height: 100%;
+        padding: 12rem 1rem;
+        gap: 30px 12px;
+    }
     
     #mobile-menu {
         display: flex;
@@ -398,6 +447,16 @@ hr {
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+
+        & hr {
+            display: none;
+        }
+        & h1{
+            padding: 0;
+        }
+        & h3{
+            padding: 0;
+        }
     }
 
     .product_price {
@@ -445,6 +504,11 @@ hr {
 
     h3 {
         font-size: 20px;
+    }
+
+    #buttons .material-symbols-outlined {
+        font-size: medium;
+        padding: 0.5rem;
     }
 
     #description-featured-section {
