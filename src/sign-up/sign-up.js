@@ -12,7 +12,7 @@ function signUp(e) {
     const email = document.getElementById('email-input').value
     const username = document.getElementById('username-input').value
     const birthday = document.getElementById('birthday-input').value
-    const urlImage = document.getElementById('file-input').files[0]
+    const urlImage = document.getElementById('picture-input').files[0]
     const password = document.getElementById('password-input').value
     const confirmPassword = document.getElementById('conf-password-input').value
     
