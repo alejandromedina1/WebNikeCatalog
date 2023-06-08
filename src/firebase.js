@@ -13,7 +13,8 @@ import {
   getDocs,
   setDoc,
   doc,
-  collection
+  collection,
+  getDoc,
 } from "firebase/firestore";
 
 import {
@@ -60,9 +61,11 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     //const uid = user.uid;
     // ...
-    
-    validateAdmin(user)
+    const userData = await getUserData(user)
+    console.log(user.uid)
+    console.log(user)
     userValidation(true)
+    adminAccess(userData.isAdmin)
 
   } else {
     // User is signed out
@@ -117,35 +120,17 @@ export async function addUserToDb(userInfo, id) {
   }
 }
 
-export async function validateAdmin(user) {
-  const userCollection = collection(db, 'users')
-  const query = userCollection.where("uid", "==", user.uid)
+export async function getUserData(user) {
+  const docRef = doc(db, "users", user.uid)
+  const docSnap = await getDoc(docRef)
 
-  getDocs(query)
-      .then((querySnapshot) => {
-        if (querySnapshot.size > 0) {
-          // El documento del usuario fue encontrado
-          const userData = querySnapshot.docs[0].data();
-          const userRole = userData.isAdmin;
+  if (docSnap.exists()) {
+    console.log('Document data:', docSnap.data())
+    return docSnap.data()
+  }else {
+    console.log('No existe el documento')
+  }
 
-          // Verifica si el usuario es un administrador
-          if (userRole) {
-            // El usuario es un administrador
-            console.log("El usuario es un administrador");
-            adminAccess(user, userRole)
-          } else {
-            // El usuario no es un administrador
-            console.log("El usuario no es un administrador");
-            adminAccess(user, userRole)
-          }
-        } else {
-          // No se encontró el documento del usuario
-          console.log("No se encontró el documento del usuario");
-        }
-      })
-      .catch((error) => {
-        console.error("Error al obtener el documento del usuario:", error);
-      });
 }
 
 export async function createUser(userInfo) {

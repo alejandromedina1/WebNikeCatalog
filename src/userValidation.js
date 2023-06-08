@@ -1,24 +1,3 @@
-const routes = [{
-        path: '/',
-        requiresAuth: true
-    },
-    {
-        path: '/catalog/',
-        requiresAuth: true
-    },
-    {
-        path: '/logIn/',
-        requiresAuth: false
-    },
-    {
-        path: '/sign-up/',
-        requiresAuth: false
-    },
-    {
-        path: '/add-products/',
-        requiresAuth: true
-    },
-]
 
 
 export function userValidation(userIsSignedIn) {
@@ -42,18 +21,18 @@ export function userValidation(userIsSignedIn) {
         if (isProducts) {
             window.location.replace('/login/')
         }
-    } else {
-        if (isLogIn) {
-            window.location.replace('/')
-        }
-        if (isSignUp) {
-            window.location.replace('/')
-        }
-    }
+    } 
 }
 
-export function adminAccess(userIsSignedIn, isAdmin) {
-    if (userIsSignedIn && !isAdmin) {
+export function adminAccess(isAdmin) {
+    const path = window.location.pathname
+    const isHome = path === '/'
+    const isCatalog = path.includes('catalog')
+    const isLogIn = path.includes('login')
+    const isSignUp = path.includes('sign-up')
+    const isAddProducts = path.includes('add-products')
+    const isProducts = path.includes('about')
+    if (!isAdmin) {
         if (isLogIn) {
             window.location.replace('/')
         }
@@ -63,7 +42,7 @@ export function adminAccess(userIsSignedIn, isAdmin) {
         if (isAddProducts) {
             window.location.replace('/')
         }
-    } else if (userIsSignedIn && isAdmin) {
+    } else if (isAdmin) {
         if (isLogIn) {
             window.location.replace('/')
         }
