@@ -1,5 +1,5 @@
 import "../components/product_details/product.js"
-import { getShoes } from '../firebase'
+import { getShoes, sendProductToCart } from '../firebase'
 const urlParams = new URLSearchParams(location.search)
 
 let menu = document.getElementById('desktop-menu');
@@ -127,3 +127,9 @@ window.addEventListener("scroll", function () {
     var header = this.document.getElementById("mobile-menu");
     header.classList.toggle("abajo", this.window.scrollY > 0);
 })
+
+const addToCartButton = document.getElementById('add-to-cart')
+console.log(addToCartButton)
+
+addToCartButton.addEventListener('click', async () => sendProductToCart(currentShoe))
+

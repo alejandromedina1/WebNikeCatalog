@@ -7,18 +7,26 @@ export function userValidation(userIsSignedIn) {
     const isCatalog = path.includes('catalog')
     const isLogIn = path.includes('login')
     const isSignUp = path.includes('sign-up')
-    const isAddProducts = path.includes('add-products')
     const isProducts = path.includes('about')
+    const isAdminProfile = path.includes('admin-profile')
+    const isUserProfile = path.includes('user-profile')
+    const isCart = path.includes('shop-cart-products')
 
     console.log(path)
     if (!userIsSignedIn) {
         if (isCatalog) {
             window.location.replace('/login/')
         }
-        if (isAddProducts) {
+        if (isProducts) {
             window.location.replace('/login/')
         }
-        if (isProducts) {
+        if (isAdminProfile) {
+            window.location.replace('/login/')
+        }
+        if (isUserProfile) {
+            window.location.replace('/login/')
+        }
+        if (isCart) {
             window.location.replace('/login/')
         }
     } 
@@ -30,8 +38,10 @@ export function adminAccess(isAdmin) {
     const isCatalog = path.includes('catalog')
     const isLogIn = path.includes('login')
     const isSignUp = path.includes('sign-up')
-    const isAddProducts = path.includes('add-products')
     const isProducts = path.includes('about')
+    const isAdminProfile = path.includes('admin-profile')
+    const isUserProfile = path.includes('user-profile')
+    const isCart = path.includes('shop-cart-products')
     if (!isAdmin) {
         if (isLogIn) {
             window.location.replace('/')
@@ -39,8 +49,8 @@ export function adminAccess(isAdmin) {
         if (isSignUp) {
             window.location.replace('/')
         }
-        if (isAddProducts) {
-            window.location.replace('/')
+        if (isAdminProfile) {
+            window.location.replace('/user-profile/')
         }
     } else if (isAdmin) {
         if (isLogIn) {
@@ -48,6 +58,9 @@ export function adminAccess(isAdmin) {
         }
         if (isSignUp) {
             window.location.replace('/')
+        }
+        if (isUserProfile) {
+            window.location.replace('/admin-profile')
         }
     }
 }
