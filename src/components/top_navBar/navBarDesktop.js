@@ -50,7 +50,7 @@ class NavBarDesktop extends HTMLElement {
                     favorite
                 </span>
                 </a>
-                <a><span class="material-symbols-outlined">
+                <a href="/shop-cart-products/"><span class="material-symbols-outlined">
                     shopping_cart
                 </span>
                 </a>
