@@ -40,7 +40,12 @@ class Card extends HTMLElement {
             <h1 class="product_title">${this.name}</h1>
             <hr />
             <h3 class="category_style">${this.category}</h3>
-            <a href="/about/?name=${this.formatName(this.name)}" class="product_btn btn">SEE MORE</a>
+            <div id="buttons">
+                <a href="/about/?name=${this.formatName(this.name)}" class="product_btn btn">SEE MORE</a>
+                <a id="shopping_cart_button"><span class="material-symbols-outlined" >
+                    shopping_cart
+                </span></a>
+            </div>
         </div>
         </article>`;
     }
