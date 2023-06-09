@@ -15,47 +15,19 @@ class Shopping_cart extends HTMLElement {
     }
     render() {
         this.innerHTML = `
-        <h1>Added products</h1>
         <article id = "product-details-container">
             <figure id = 'image-container'>
                 <img id = "product-highlighted-image" src="${this.url}">
             </figure>
             <div id = 'text-details-container'>
-                <a href = "/catalog/"> 
-                    <p>  < Back </p>
-                </a>
                 <div id = labels> 
                     <h4>${this.collection}</h4>
                     <h4> ${this.category}</h4>
                 </div>
                 <h1 id ="title"> ${this.name} </h1>
                 <h3 class = "prices"> ${this.price}$</h3>
-            <!--
-                <p class = "paragraph-text"> ${this.description} </p>
-                <h2> Item Colors </h2>
-                <div id="product-colors"></div>
-                <hr>
-                <h2> Size</h2>
-                <div id="size-btns">
-                    <button class="talla-btn" id="talla-1">37</button>
-                    <button class="talla-btn" id="talla-2">38</button>
-                    <button class="talla-btn" id="talla-3">39</button>
-                    <button class="talla-btn" id="talla-4">40</button>
-                    <button class="talla-btn" id="talla-5">41</button>    
-                </div>
-                <hr>
-                <h2> Rate this product</h2>
-                <div>
-                    <span class="stars" id="star1">&#9733;</span>
-                    <span class="stars" id="star2">&#9733;</span>
-                    <span class="stars" id="star3">&#9733;</span>
-                    <span class="stars" id="star4">&#9733;</span>
-                    <span class="stars" id="star5">&#9733;</span>
-                    <span class="mensaje" id="mensaje"></span>
-                </div>
-                <hr>
-                <button id = 'add-to-cart' > Add to Cart </button>
-            -->
+            </div>
+            <h5 class="remove-item"> X </h5>
         </article>
         `
         console.log(this.url)

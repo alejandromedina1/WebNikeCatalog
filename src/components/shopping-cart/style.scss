@@ -1,3 +1,84 @@
-added-product{
-    margin-top: 10rem;
+@media screen and (min-width: 800px){
+    h4{
+        color: gray;
+        font-size: 16px;
+    }
+
+    #product-highlighted-image{
+        width: 200px;
+    }
+    #title{
+        font-size: 40px;
+    }
+    
+    .prices{
+        font-size: 32px;
+    }
+
+    #product-details-container{
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 799px){
+    h4{
+        color: gray;
+        font-size: 14px;
+    }
+
+    #product-highlighted-image{
+        width: 100px;
+    }
+    #title{
+        font-size: 16px;
+    }
+    
+    .prices{
+        font-size: 12px;
+    }
+    #product-details-container{
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 100%;
+    }
+}
+
+
+
+
+
+#text-details-container{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+
+#labels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+.remove-item{
+    color: black;
+    height: 100%;
+}
+
+.remove-item:hover{
+    cursor: pointer;
+    color:red;
 }

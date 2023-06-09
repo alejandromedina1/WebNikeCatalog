@@ -15,6 +15,7 @@ import {
   doc,
   collection,
   getDoc,
+  deleteDoc
 } from "firebase/firestore";
 
 import {
@@ -220,7 +221,7 @@ export async function sendProductToCart(product) {
   }
 }
 
-export async function getProductsFromCart () {
+export async function getProductsFromCart() {
   const allShoes = [];
   const querySnapshot = await getDocs(collection(db, "cart"));
   querySnapshot.forEach((doc) => {
@@ -231,6 +232,15 @@ export async function getProductsFromCart () {
     })
   });
   return allShoes
+}
+
+export async function deleteProductFromCart(product) {
+  try{
+    await deleteDoc(doc(db, 'cart', product))
+    console.log('product deleted')
+  } catch (error){
+    console.error(error)
+  }
 }
 
 
