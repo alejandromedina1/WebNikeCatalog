@@ -61,6 +61,7 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     //const uid = user.uid;
     // ...
+
     const userData = await getUserData(user)
     console.log(user.uid)
     console.log(user)

@@ -15,7 +15,7 @@ class NavBarMobile extends HTMLElement {
     render() {
         this.innerHTML= `
         <nav id="principal-menu" class="topnav">
-        <a href="#" id="logo-img"><img src="../../public/nike logo blanco.png" height="30px" alt=""></a>
+        <a href="/" id="logo-img"><img src="../../public/nike logo blanco.png" height="30px" alt=""></a>
         <div id="search-nav">
           <a><span class="material-symbols-outlined">
               search

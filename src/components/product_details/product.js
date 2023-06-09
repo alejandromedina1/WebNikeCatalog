@@ -24,12 +24,12 @@ class Product extends HTMLElement {
                     <p>  < Back </p>
                 </a>
                 <div id = labels> 
-                    <h4>${this.collection}</h4>
-                    <h4> ${this.category}</h4>
+                    <h4 id="collection">${this.collection}</h4>
+                    <h4 id="category">${this.category}</h4>
                 </div>
-                <h1 id ="title"> ${this.name} </h1>
-                <h3 class = "prices"> ${this.price}$</h3>
-                <p class = "paragraph-text"> ${this.description} </p>
+                <h1 id ="title">${this.name}</h1>
+                <h3 class = "prices">${this.price}$</h3>
+                <p class = "paragraph-text">${this.description}</p>
                 <h2> Item Colors </h2>
                 <div id="product-colors"></div>
                 <hr>
