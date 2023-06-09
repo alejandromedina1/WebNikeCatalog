@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../global.scss">
-    <link rel="stylesheet" href="../components/product_details/style.scss">
+    <link rel="stylesheet" href="../components/shopping-cart/style.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -25,7 +25,32 @@
         <top-nav-bar-mobile></top-nav-bar-mobile>
     </header>
 
-    <section id="added-to-cart"></section>
+    <div id="add-to-cart-checkout">
+        <section id="added-to-cart"></section>
+
+        <section id="payment-options">
+            <article id="checkout-card">
+                <div class="line-checkout">
+                    <h4>Subtotal</h4>
+                    <h2>$</h2>
+                </div>
+                <div class="line-checkout">
+                    <h4>Shipping</h4>
+                    <h2>$20</h2>
+                </div>
+                <div class="line-checkout">
+                    <h4>Tax (15%)</h4>
+                    <h2>$</h2>
+                </div>
+                <div class="line-checkout">
+                    <h4>Total</h4>
+                    <h2>$</h2>
+                </div>
+                <button id="proceed-to-checkout"> Proceed to Checkout</button>
+            </article>
+        </section>
+    </div>
+
 
     <footer>
         <nike-footer></nike-footer>

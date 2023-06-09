@@ -109,7 +109,8 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    & a{
+
+    & a {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -309,7 +310,7 @@ li {
     margin-bottom: 0px;
     background-color: black;
     color: white;
-    
+
 }
 
 #dark-section-container-image {
@@ -394,7 +395,8 @@ h3 {
     width: 40%;
     height: 100%;
 }
-.column-small{
+
+.column-small {
     width: 20%;
 }
 
@@ -506,7 +508,7 @@ footer section .resources li:not(.options):hover {
     transition: 0.5s;
 }
 
-#footer-logo{
+#footer-logo {
     width: 100px;
 }
 
@@ -580,7 +582,7 @@ hr {
         text-align: left;
     }
 
-    .topnav ul{
+    .topnav ul {
         display: flex;
         flex-direction: column;
     }
@@ -685,65 +687,75 @@ hr {
         padding: 16px;
     }
 
-    #kids-section{
+    #kids-section {
         overflow: auto;
         width: 100%;
     }
-    .kids-image{
+
+    .kids-image {
         height: 100%;
-        width:unset;
+        width: unset;
     }
 
-    #kids-section-button{
+    #kids-section-button {
         font-size: 12px;
     }
 
     #dark-section {
         flex-direction: column;
     }
-    
-    #dark-section-info{
+
+    #dark-section-info {
         font-size: 12px;
     }
+
     h5 {
-        
+
         font-size: 12px;
     }
-    h3{
+
+    h3 {
         font-size: 20px;
     }
-    #description-featured-section{
+
+    #description-featured-section {
         font-size: 12px;
     }
+
     footer {
         flex-wrap: wrap;
     }
+
     #footer-section-resources {
         flex-direction: column;
         flex-wrap: wrap;
     }
+
     li {
         font-size: 14px;
     }
+
     footer section .resources li:not(.options) {
         color: #A3A3A3;
         font-size: 14px;
         transition: 0.5s;
         cursor: pointer;
     }
-    
+
     footer section .resources li:not(.options):hover {
         color: white;
         font-size: 14px;
         transition: 0.5s;
     }
-    #footer-logo{
+
+    #footer-logo {
         width: 20%px;
         display: flex;
         justify-content: center;
         padding-left: 20%;
     }
-    p{
+
+    p {
         font-size: 12px;
     }
 
@@ -759,11 +771,85 @@ hr {
 
 }
 
-#details-container{
+#details-container {
     padding-top: 100px;
     background-color: #F6F6F6;
 }
 
-a {color:transparent;}       
-a:hover {cursor: pointer;}
-a:active {color:transparent;}  /* Selected link   */
+a {
+    color: transparent;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+a:active {
+    color: transparent;
+}
+
+/* Selected link   */
+
+
+#added-to-cart {
+    padding-top: 100px;
+
+}
+
+#add-to-cart-checkout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 100px;
+    background-color: rgb(245, 245, 245);
+    gap: 200px;
+}
+
+#payment-options {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 100px;
+}
+
+#added-to-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+
+}
+
+#checkout-card {
+    padding: 100px;
+    gap: 40px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.line-checkout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#proceed-to-checkout {
+    color: white;
+    text-align: center;
+    padding: 1rem 2rem;
+    white-space: nowrap;
+    border-radius: 18px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: black;
+}
+
+#proceed-to-checkout:hover{
+    background-color: #CE011E;
+}

@@ -1,5 +1,5 @@
 import "../components/card/card.js"
-import {getProductsFromCart} from "../firebase.js"
+import {getProductsFromCart, deleteProductFromCart} from "../firebase.js"
 import '../components/shopping-cart/shopping-cart.js'
 
 let menu = document.getElementById('desktop-menu');
@@ -14,7 +14,7 @@ async function retrieveShoes() {
 let shoesList = []
 await retrieveShoes()
 
-console.log(shoesList[0])
+console.log(shoesList)
 
 const cartSection = document.getElementById('added-to-cart')
 console.log(cartSection)
@@ -38,5 +38,30 @@ function renderShoes() {
 
     
 }
+
+await removeProduct()
+
+async function removeProduct() {
+    const crosses = document.querySelectorAll('.remove-item')
+    console.log(crosses)
+    
+    crosses.forEach(cross => {
+        cross.addEventListener('click', async ()=> {
+            const array = Array.prototype.slice.call(crosses)
+            const indexCross = array.indexOf(cross)
+            console.log(indexCross)
+
+            const productId = shoesList[indexCross].id
+            console.log(productId)
+
+            await deleteProductFromCart(productId)
+
+            window.location.reload()
+
+        })
+    })
+
+}
+
 
 
