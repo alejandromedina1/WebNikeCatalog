@@ -17,7 +17,6 @@ export default defineConfig({
                 "sign-up": resolve(root, 'sign-up', 'index.html'),
                 "login": resolve(root, 'login', 'index.html'),
                 "add-products": resolve(root, 'add-products', 'index.html'),
-                "user-profile": resolve(root, 'user-profile', 'index.html'),
                 "shop-cart-products": resolve(root, 'shop-cart-products', 'index.html'),
             }
         },
