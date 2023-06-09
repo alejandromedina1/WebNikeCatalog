@@ -58,6 +58,10 @@ class NavBarDesktop extends HTMLElement {
                     account_circle
                 </span>
                 </a>
+                <a href = "#"><span class="material-symbols-outlined">
+                    logout
+                </span>
+                </a>
             </div>
             </nav>
         `;

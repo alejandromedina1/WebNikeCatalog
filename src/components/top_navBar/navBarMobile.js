@@ -31,6 +31,10 @@ class NavBarMobile extends HTMLElement {
           </a>
           <a href = "/login/"><span class="material-symbols-outlined">
                     account_circle
+            </span>
+          </a>
+          <a href = "#"><span class="material-symbols-outlined">
+                    logout
                 </span>
                 </a>
         </div>

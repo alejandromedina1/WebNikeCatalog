@@ -10,6 +10,9 @@ const priceInput = document.getElementById('price-input')
 const inputFile = document.getElementById('image-input')
 const addButton = document.getElementById('add-product')
 
+let menu = document.getElementById('desktop-menu');
+menu.style.backgroundColor = '#1e1e1e'
+
 const logOutButton = document.getElementById('log-out')
 logOutButton.addEventListener('click',() => logOut())
 addButton.addEventListener('click', (e) => uploadProduct(e))
