@@ -7,11 +7,8 @@ describe('Card', () => {
         
         //Arange
         const name = 'Air Max 90'
-        const description = 'This is the description from the product'
         const category = 'this is the category'
-        const collection = 'this is the collection'
         const price = '180'
-        const colors = ['Blue']
         const url = 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2005fa7c-c506-43f1-9448-a985c8cad07a/calzado-air-jordan-1-mid-b3js2D.png'
 
         const section = document.createElement('nike-card')
@@ -34,11 +31,8 @@ describe('Card', () => {
         
         //Arange
         const name = 'Air Max 90 Go'
-        const description = 'This is the description'
         const category = 'Category'
-        const collection = 'this is the collection'
         const price = '180'
-        const colors = ['Blue']
         const url = 'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/2005fa7c-c506-43f1-9448-a985c8cad07a/calzado-air-jordan-1-mid-b3js2D.png'
 
         const section = document.createElement('nike-card')
