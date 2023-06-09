@@ -131,5 +131,9 @@ window.addEventListener("scroll", function () {
 const addToCartButton = document.getElementById('add-to-cart')
 console.log(addToCartButton)
 
-addToCartButton.addEventListener('click', async () => sendProductToCart(currentShoe))
+addToCartButton.addEventListener('click', async () => {
+  sendProductToCart(currentShoe)
+  alert('Product added to the cart')
+})
+
 
