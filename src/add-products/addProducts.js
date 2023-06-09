@@ -8,6 +8,8 @@ const descriptionInput = document.getElementById('description-input')
 const colorsInput = document.getElementById('colors-input')
 const priceInput = document.getElementById('price-input')
 const inputFile = document.getElementById('image-input')
+
+console.log(inputFile)
 const addButton = document.getElementById('add-product')
 
 let menu = document.getElementById('desktop-menu');
@@ -20,6 +22,7 @@ addButton.addEventListener('click', (e) => uploadProduct(e))
 async function uploadProduct(e) {
     e.preventDefault()
 
+    console.log(inputFile.files[0])
     const file = inputFile.files[0]
     const colors = catchColors()
 
