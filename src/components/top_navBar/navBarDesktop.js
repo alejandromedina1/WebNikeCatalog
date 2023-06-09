@@ -1,14 +1,15 @@
 //import "/src/global.scss"
 
+
 class NavBarDesktop extends HTMLElement {
     constructor() {
         super()
     }
-    
+
     connectedCallback() {
         this.render()
     }
-    
+
     attributeChangedCallback(propName, oldValue, newValue) {
         //console.log(`attr ${propName} changed`)
         this[propName] = newValue
@@ -16,7 +17,7 @@ class NavBarDesktop extends HTMLElement {
     }
 
     render() {
-        this.innerHTML= `
+        this.innerHTML = `
             <nav id="principal-menu">
             <a href="/" id="logo-img"><img src="../../public/nike logo blanco.png" height="30px" alt=""></a>
             <div id="list-menu">
@@ -58,7 +59,7 @@ class NavBarDesktop extends HTMLElement {
                     account_circle
                 </span>
                 </a>
-                <a href = "#"><span class="material-symbols-outlined">
+                <a href = '#' id ="log-out"><span class="material-symbols-outlined">
                     logout
                 </span>
                 </a>
@@ -66,12 +67,12 @@ class NavBarDesktop extends HTMLElement {
             </nav>
         `;
     }
-    
+
 }
 
 window.addEventListener("scroll", function () {
     var header = this.document.getElementById("desktop-menu");
-    header.classList.toggle("abajo", this.window.scrollY>0);
+    header.classList.toggle("abajo", this.window.scrollY > 0);
 })
 
 customElements.define('top-nav-bar-desktop', NavBarDesktop);

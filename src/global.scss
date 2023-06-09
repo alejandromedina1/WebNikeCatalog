@@ -87,6 +87,9 @@ li {
 .nav-link {
     color: rgb(222, 222, 222);
 }
+.filter{
+    color: #1E1E1E;
+}
 
 .active {
     color: white;
@@ -932,4 +935,8 @@ a:active {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+}
+
+#catalog{
+    background-color: white;
 }
