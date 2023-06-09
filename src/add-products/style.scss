@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+#add-products-body {
+    margin: 0;
+    background-color: #1e1e1e;
+}
+
+
+#form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    padding: 9rem 4rem 4rem 4rem;
+    gap: 80px;
+    color: #1e1e1e;
+    width: 100%;
+    
+    h1{
+        font-size: 70px;
+        font-weight: 800;
+        line-height: 85%;
+    }
+    #text-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 18px;
+        color: white;
+        left: 50%;
+        width: 50%;
+    }
+    
+    input {
+        background-color: white;
+        //border: 3px solid white;
+        border-radius: 50px;
+        padding:  1rem 2.5rem;
+        width: 100%;
+    }
+    
+    input::placeholder{
+        color: #1e1e1e;
+    }
+    
+    input:valid{
+        background-color: white;
+        border: 3px solid white;
+        border-radius: 50px;
+        padding:  1rem 2.5rem;
+        color: white;
+        width: 100%;
+    }
+    
+    #add-product {
+        padding:  1rem 2.5rem;
+        width: 100%;
+        border-color: #1e1e1e;
+        background-color: #1e1e1e;
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 50px;
+        border: 3px solid white;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    #add-product:hover{
+        background-color: #CE011E;
+        border-color: #CE011E;
+        color: white;
+    }
+    
+    #image-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 0%;
+        width: 100%;
+        height: 800px;
+        background: url('https://www.freeiconspng.com/thumbs/upload-icon/upload-icon-22.png') no-repeat center;
+    }
+ 
+    #image-input::-webkit-file-upload-button{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        font-size: medium;
+        border-radius: 50px;
+        border: none;
+    }
+
+    #image-input::-webkit-file-upload-button:hover{
+        background-color: #CE011E;
+        border-color: #CE011E;
+        color: white;
+    }
+
+}
+
+/*mobile styles*/
+
+@media (max-width: 800px) {
+
+    #form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding: 5rem 2rem 2rem 2rem;
+
+        h1{
+            font-size: large;
+        }
+
+        #text-inputs{
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+}
