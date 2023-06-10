@@ -19,9 +19,8 @@ let shoesList = []
 
 setTimeout( async () => {
     await retrieveShoes()
-    console.log(shoesList)
     renderShoes()
-
+    await removeProduct()
 }, 1000)
 
 
@@ -48,22 +47,22 @@ function renderShoes() {
 
 }
 
-await removeProduct()
 
 async function removeProduct() {
     const crosses = document.querySelectorAll('.remove-item')
     console.log(crosses)
 
-    crosses.forEach(cross => {
+    crosses.forEach((cross) => {
         cross.addEventListener('click', async () => {
+            console.log('click')
             const array = Array.prototype.slice.call(crosses)
             const indexCross = array.indexOf(cross)
             console.log(indexCross)
 
-            const productId = shoesList[indexCross].id
-            console.log(productId)
+            const product = shoesList[indexCross]
+            console.log(product)
 
-            await deleteProductFromCart(productId)
+            await deleteProductFromCart(product)
 
             window.location.reload()
 
