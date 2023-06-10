@@ -15,7 +15,10 @@ import {
   doc,
   collection,
   getDoc,
-  deleteDoc
+  deleteDoc,
+  updateDoc,
+  arrayUnion,
+  arrayRemove
 } from "firebase/firestore";
 
 import {
@@ -55,7 +58,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const storage = getStorage(app)
 const db = getFirestore(app);
-const auth = getAuth(app);
+const auth = getAuth();
 
 onAuthStateChanged(auth, async (user) => {
   console.log('cambio en la autenticación')
@@ -129,7 +132,7 @@ export async function getUserData(user) {
   if (docSnap.exists()) {
     console.log('Document data:', docSnap.data())
     return docSnap.data()
-  }else {
+  } else {
     console.log('No existe el documento')
   }
 
@@ -212,35 +215,45 @@ export async function logOut() {
 }
 
 export async function sendProductToCart(product) {
-  try {
-    const docRef = await addDoc(collection(db, "cart"), product);
+try{
+  const userRef = doc(db, "users", auth.currentUser.uid)
+  console.log(userRef, auth.currentUser.uid)
+  await updateDoc(userRef, {
+    cart: arrayUnion(product)
+  })
+} catch (error) {
+  console.error(error)
+}
 
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
+
 }
 
 export async function getProductsFromCart() {
-  const allShoes = [];
-  const querySnapshot = await getDocs(collection(db, "cart"));
-  querySnapshot.forEach((doc) => {
-    //console.log(`${doc.id} => ${doc.data().name}`);
-    allShoes.push({
-      ...doc.data(),
-      id: doc.id
-    })
-  });
-  return allShoes
-}
-
-export async function deleteProductFromCart(product) {
-  try{
-    await deleteDoc(doc(db, 'cart', product))
-    console.log('product deleted')
-  } catch (error){
+  try {
+    console.log(auth.currentUser.uid)
+    const user = auth.currentUser.uid
+    const userRef = doc(db, "users", user)
+    const docSnap = await getDoc(userRef)
+  
+    if (docSnap.exists()) {
+      const allShoes = docSnap.data().cart
+      return allShoes  
+    } else {
+      console.log("No such document!");
+    }
+  } catch (error) {
     console.error(error)
   }
 }
 
-
+export async function deleteProductFromCart(product) {
+  try{
+    const userRef = doc(db, "users", auth.currentUser.uid)
+    console.log(userRef, auth.currentUser.uid)
+    await updateDoc(userRef, {
+      cart: arrayRemove(product)
+    })
+  } catch (error) {
+    console.error(error)
+  }
+}

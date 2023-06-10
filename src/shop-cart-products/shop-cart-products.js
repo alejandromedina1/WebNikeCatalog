@@ -1,5 +1,8 @@
 import "../components/card/card.js"
-import {getProductsFromCart, deleteProductFromCart} from "../firebase.js"
+import {
+    getProductsFromCart,
+    deleteProductFromCart
+} from "../firebase.js"
 import '../components/shopping-cart/shopping-cart.js'
 
 let menu = document.getElementById('desktop-menu');
@@ -9,17 +12,23 @@ menu.style.position = 'fixed'
 
 async function retrieveShoes() {
     shoesList = await getProductsFromCart()
+    console.log(shoesList)
+    //getProductsFromCart()
 }
-
 let shoesList = []
-await retrieveShoes()
 
-console.log(shoesList)
+setTimeout( async () => {
+    await retrieveShoes()
+    console.log(shoesList)
+    renderShoes()
+
+}, 1000)
+
+
 
 const cartSection = document.getElementById('added-to-cart')
 console.log(cartSection)
 
-renderShoes()
 
 function renderShoes() {
     cartSection.innerHTML = ''
@@ -36,7 +45,7 @@ function renderShoes() {
         cartSection.append(nikeShoe)
     })
 
-    
+
 }
 
 await removeProduct()
@@ -44,9 +53,9 @@ await removeProduct()
 async function removeProduct() {
     const crosses = document.querySelectorAll('.remove-item')
     console.log(crosses)
-    
+
     crosses.forEach(cross => {
-        cross.addEventListener('click', async ()=> {
+        cross.addEventListener('click', async () => {
             const array = Array.prototype.slice.call(crosses)
             const indexCross = array.indexOf(cross)
             console.log(indexCross)
@@ -62,6 +71,3 @@ async function removeProduct() {
     })
 
 }
-
-
-
